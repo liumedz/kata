@@ -6,6 +6,10 @@
     "morgan": "~1.0.0",
     "body-parser": "~1.0.0",
     "method-override": "~1.0.0",
-    "mongoose": "~3.8.8"
+    "mongoose": "~3.8.8",
+    "ejs": "~1.0.0",
+    "i18n": "~0.4.1",
+    "cookie-parser": "~1.0.1",
+    "ejs-locals": "~1.0.2"
   }
 }
