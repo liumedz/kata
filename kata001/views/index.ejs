@@ -1,8 +1,5 @@
-<% layout('layout') -%>
-<% script('js/app.js') -%>
-<% stylesheet('css/styles.css') -%>
-<% block('header', "<p>I'm in the header.</p>") -%>
-
-<% include /admin/customers/customers-list-tpl.ejs %>
-
-<% block('footer', "<p>I'm in the footer.</p>") -%>
+<% include layout-head %>
+<% include admin/customers/customers-list-tpl %>
+<% include layout-scripts %>
+<% include admin/customers/scripts %>
+<% include layout-foot %>
