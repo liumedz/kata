@@ -3,3 +3,6 @@
 /kata002/server/node_modules
 /kata002/server/dist
 /kata001/public/vendor
+/kata003/node_modules
+/kata003/.idea
+/kata003/client/development/vendor
