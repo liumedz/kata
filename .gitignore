@@ -6,3 +6,6 @@
 /kata003/node_modules
 /kata003/.idea
 /kata003/client/development/vendor
+/kata003/client/vendor
+/kata003/bin/production
+/kata003/bin/views
