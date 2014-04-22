@@ -5,25 +5,61 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
+var expressSession = require('express-session');
+var i18n = require("i18n");
 
-// view engine setup
-app.set('views', path.join(__dirname, '/views/', app.get('env')));
-app.set('view engine', 'jade');
+
+var authorization = require('express-authorization');
+var mongoose = require('mongoose');
+var dbPath = 'mongodb://localhost/kata4';
+
+var userModel = require('./models/user')(mongoose);
+
+var clames = require('./common/clames');
+var authorizationRoutes = require('./routes/authorization-routes')(express, clames);
+var localizationRoutes = require('./routes/localization-routes')(express);
+var webRoutes = require('./routes/web-routes')(express, authorization);
+var adminRoutes = require('./routes/admin-routes')(express, authorization, clames, userModel);
+
+
+i18n.configure({
+    locales:['en', 'de', 'lt'],
+    cookie: 'locale',
+    directory: __dirname + '/locales'
+});
+
+
 
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use(cookieParser());
-//app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, '/client/', app.get('env'))));
+app.use(cookieParser('kata003'));
+mongoose.connect(dbPath);
 
-app.use('/', routes);
-app.use('/users', users);
+app.use(expressSession());
+
+if (app.get('env') === 'development'){
+    // view engine setup
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'jade');
+    app.use(express.static(path.join(__dirname, 'client')));
+}
+
+if (app.get('env') === 'production'){
+    // view engine setup
+    app.set('views', path.join(__dirname, 'bin', 'views'));
+    app.set('view engine', 'jade');
+    app.use(express.static(path.join(__dirname, 'bin', app.get('env'))));
+}
+
+app.use(i18n.init);
+
+app.use('/', authorizationRoutes);
+app.use('/', localizationRoutes);
+app.use('/', webRoutes);
+app.use('/admin', adminRoutes);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
@@ -55,6 +91,7 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
 
 
 module.exports = app;

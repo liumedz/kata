@@ -1,67 +1,70 @@
 module.exports = function(grunt) {
 
-    var adminAppCss = [
-        './client/development/admin/css/style.css'
-    ]
+    var fs = require('fs');
+    var path = require('path');
 
-    var adminAppJs = [
-        './client/development/admin/app.js'
-    ]
+    var readFiles = require('./grunt-custom')();
+
+    var jadeTemplatesDir = path.join(__dirname, 'views');
+    var binDir = "bin";
+    var sourceDir = 'client';
+    var targetDir = 'bin/production';
+    var targetViews = 'bin/views';
+
+    var concatTask = readFiles.getConcatTask(jadeTemplatesDir, sourceDir, targetDir);
+    var csMinTask = readFiles.getCsMinTask(jadeTemplatesDir, targetDir);
+    var uglifyTask = readFiles.getUglifyTask(jadeTemplatesDir, targetDir);
 
     require('load-grunt-tasks')(grunt);
 
-    var tmpFilePath = '.tmp/';
+    grunt.task.registerTask("prepareStylesViews", "prepareStylesViews", function(arg1, arg2){
+        readFiles.prepareStylesViews(targetViews, "production.min.css");
+    });
+
+    grunt.task.registerTask("prepareScriptsViews", "prepareScriptsViews",function(arg1, arg2){
+        readFiles.prepareScriptsViews(targetViews, "production.min.js");
+    });
+
 
     grunt.initConfig({
+
         pkg: grunt.file.readJSON('package.json'),
 
-
         clean: {
-            dev: [tmpFilePath]
+            dev: [targetDir, targetViews]
         },
 
         copy: {
             main: {
                 files: [
-                    {expand: true, src: ['client/development/**'], dest: tmpFilePath}
+                    {expand: true, src: ['views/**'], dest: binDir},
+                    {expand: true
+                        ,cwd: 'client/vendor/bootstrap'
+                        ,src: 'fonts/**'
+                        ,dest: targetDir},
+                    {expand: true
+                        ,cwd: 'client'
+                        ,src: 'images/**'
+                        ,dest: targetDir}
                 ]
             }
         },
 
-        concat: {
+        concat: concatTask.concat,
 
-            adminAppCss: {
-                src: adminAppCss,
-                dest: tmpFilePath + 'client/development/admin/production.css'
-            },
+        cssmin: csMinTask.cssmin,
 
-            adminAppJs: {
-                src: adminAppJs,
-                dest: tmpFilePath + 'client/development/admin/production.js'
-            }
-        },
-
-        cssmin: {
-            adminAppCss: {
-                src: [tmpFilePath + 'client/development/admin/production.css'],
-                dest: './client/production/admin/production.css'
-            }
-        },
-
-        uglify: {
-            adminAppJs: {
-                src: [tmpFilePath + 'client/development/admin/production.js'],
-                dest: './client/production/admin/production.js'
-            }
-        }
+        uglify: uglifyTask.uglify
 
     });
 
     grunt.registerTask('default', [
-        'copy'
+        'clean'
         ,'concat'
         ,'cssmin'
         ,'uglify'
-        ,'clean'
+        ,'copy'
+        ,'prepareStylesViews'
+        ,'prepareScriptsViews'
     ]);
 };

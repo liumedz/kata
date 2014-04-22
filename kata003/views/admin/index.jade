@@ -1,0 +1,32 @@
+extends ../layout
+block styles
+    // styles start
+    link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/admin/css/style.css')
+    // styles end
+block content
+    div(data-ng-app='app', ng-controller="adminController")
+        include header
+        include sidebar
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+            div(data-ng-view)
+        include content
+block scripts
+    // scripts start
+    script(src='/vendor/jquery/dist/jquery.js')
+    script(src='/vendor/bootstrap/dist/js/bootstrap.js')
+    script(src='/vendor/angular/angular.js')
+    script(src='/vendor/angular-route/angular-route.js')
+    script(src='/vendor/angular-resource/angular-resource.js')
+    script(src='/admin/app.js')
+    script(src='/admin/controllers/admin-controller.js')
+    script(src='/admin/controllers/overview-controller.js')
+    script(src='/admin/controllers/users-controller.js')
+    script(src='/admin/resources/users-resource.js')
+    // scripts end
+
+block global
+    script.
+        var global = {
+            mainMenus:  [{title: "#{__('admin.index.navigation.overview')}", url: '/admin', active: 'active'}, {title: "#{__('admin.index.navigation.users')}", url: '/admin/users'}, {title: "#{__('admin.index.navigation.logout')}"}]
+        };

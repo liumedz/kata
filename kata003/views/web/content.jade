@@ -1,0 +1,107 @@
+.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+    .container
+        .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href='#')
+                img(src='images/logo.jpg', style='margin-top: -5px; margin-bottom: -5px;')
+                | Beirate
+        .navbar-collapse.collapse
+            ul.nav.navbar-nav
+                ul.nav.navbar-nav
+                    li
+                        a(href='/locale/#{locale}')= locale
+#main-carousel.carousel.slide(data-ride='carousel')
+    ol.carousel-indicators
+        li.active(data-target='#main-carousel', data-slide-to='0')
+        li(data-target='#main-carousel', data-slide-to='1')
+        li(data-target='#main-carousel', data-slide-to='3')
+    .carousel-inner
+        .item.active
+            .container
+                .row
+                    .center-block
+                        img.img-responsive(src=__('web.index.image.slide1'), width='1600')
+        .item
+            .container
+                .row
+                    .center-block
+                        img.img-responsive(src=__('web.index.image.slide2'), width='1600')
+        .item
+            .container
+                .row
+                    .center-block
+                        img.img-responsive(src=__('web.index.image.slide3'), width='1600')
+                .carousel-caption
+                    p
+                        a.btn.btn-lg.btn-primary(href='mailto:info@beirate.com', role='button') UŽSISAKYK
+    a.left.carousel-control(href='#main-carousel', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left
+    a.right.carousel-control(href='#main-carousel', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right
+.container.marketing
+    .row
+        .col-lg-3
+            img(src=__('web.index.image.simpleToRate'))
+            h2= __('web.index.beHeard.header')
+            p= __('web.index.beHeard.content')
+        .col-lg-3
+            img(src=__('web.index.image.secure'))
+            h2= __('web.index.anonymousAndSecure.header')
+            p= __('web.index.anonymousAndSecure.content')
+        .col-lg-3
+            img(src=__('web.index.image.multiplatform'))
+            h2= __('web.index.multiplatformsystem.header')
+            p= __('web.index.multiplatformsystem.content')
+
+        .col-lg-3
+            img(src=__('web.index.image.important'))
+            h2= __('web.index.weCare.header')
+            p= __('web.index.weCare.content')
+    hr.featurette-divider
+    .row.featurette
+        .col-md-7
+            h2.featurette-heading= __('web.index.tryNow.header')
+                span.text-muted=  __('web.index.tryNow.headerPart2')
+            p.lead= __('web.index.tryNow.content')
+                strong= __('web.index.tryNow.contentPart2')
+                = __('web.index.tryNow.contentPart3')
+        .col-md-5
+            img(src=__('web.index.image.try'))
+    hr.featurette-divider
+    .row.featurette
+        .col-md-7
+            img.img-responsive(src=__('web.index.image.forBusiness'))
+        .col-md-5
+            h2.featurette-heading= __('web.index.offerForBusinnes.header')
+                span.text-muted= __('web.index.offerForBusinnes.headerPart2')
+            p
+                a.btn.btn-lg.btn-primary(href='mailto:info@beirate.com', role='button')= __('web.index.orderBusinnesOffer.button')
+                a.btn.btn-lg.btn-success(href='/login', role='button')= __('web.index.login.loginButton')
+    hr.featurette-divider
+    .row.featurette
+        .col-md-7
+            h2.featurette-heading= __('web.index.detailStatistics.header')
+                span.text-muted= __('web.index.detailStatistics.headerPart2')
+            p.lead= __('web.index.detailStatistics.content')
+        .col-md-5
+            img.img-responsive(src=__('web.index.image.stat'))
+    hr.featurette-divider
+    .row.featurette
+        .col-md-7
+            img.img-responsive(src=__('web.index.image.weAre'))
+        .col-md-5
+            h2.featurette-heading=__('web.index.contact.header')
+                span.text-muted
+            p.lead= __('web.index.contact.phone')
+                | +370 602 08489
+            p.lead= __('web.index.contact.orEmail')
+                a(href='info@beirate.com') info@beirate.com
+    footer
+        p.pull-right
+            a(href='#')= __('web.index.navigation.up')
+        p.pull-right © 2014 Beirate.
+

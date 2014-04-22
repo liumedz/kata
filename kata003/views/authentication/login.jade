@@ -1,0 +1,24 @@
+extends ../layout
+block styles
+    // styles start
+    link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='/admin/css/style.css')
+    // styles end
+block content
+    form(role='form', method='post')
+        .form-group
+            label(for='email') Email address
+            input#email.form-control(type='email', placeholder='Enter email')
+            .form-group
+                label(for='password') Password
+                input#password.form-control(type='password', placeholder='Password')
+            .checkbox
+                label
+                    input(type='checkbox')
+                    | Check me out
+            input.btn.btn-default(type='submit', text='Submit')
+block scripts
+    // scripts start
+    script(src='/vendor/jquery/dist/jquery.js')
+    script(src='/vendor/bootstrap/dist/js/bootstrap.js')
+    // scripts end
