@@ -23,10 +23,17 @@ block scripts
     script(src='/admin/controllers/overview-controller.js')
     script(src='/admin/controllers/users-controller.js')
     script(src='/admin/resources/users-resource.js')
+    script(src='/admin/controllers/customers-controller.js')
+    script(src='/admin/resources/customers-resource.js')
     // scripts end
 
 block global
     script.
         var global = {
-            mainMenus:  [{title: "#{__('admin.index.navigation.overview')}", url: '/admin', active: 'active'}, {title: "#{__('admin.index.navigation.users')}", url: '/admin/users'}, {title: "#{__('admin.index.navigation.logout')}"}]
+            mainMenus:  [
+                {title: "#{__('admin.index.navigation.overview')}", url: '/admin', active: 'active'}, 
+                {title: "#{__('admin.index.navigation.users')}", url: '/admin/users'},
+                {title: "#{__('admin.index.navigation.customers')}", url: '/admin/customers'}, 
+                {title: "#{__('admin.index.navigation.logout')}", url: '/admin/logout'}
+           ]
         };

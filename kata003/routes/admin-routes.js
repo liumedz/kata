@@ -1,4 +1,4 @@
-module.exports = function(express, authorization, clames, userModel){
+module.exports = function(express, authorization, clames, models){
 
     var isPermittedView = authorization.ensureRequest.isPermitted(clames.webIndex);
 
@@ -13,13 +13,13 @@ module.exports = function(express, authorization, clames, userModel){
     });
 
     adminRouter.get('/users', isPermittedView, function(req, res) {
-        userModel.User.find(req.query, function (err, data, count) {
+        models.userModel.User.find(req.query, function (err, data, count) {
             res.send(data);
         });
     });
 
     adminRouter.post('/users', isPermittedView, function(req, res) {
-        var data = new userModel.User(req.body);
+        var data = new models.userModel.User(req.body);
         data.save(function (err, data, count) {
                 res.send(data);
             }
@@ -27,10 +27,32 @@ module.exports = function(express, authorization, clames, userModel){
     });
 
     adminRouter.put('/users/:_id', isPermittedView, function(req, res) {
-        userModel.User.findByIdAndUpdate(req.params._id, req.body, function (err, numberAffected, raw) {
+        models.userModel.User.findByIdAndUpdate(req.params._id, req.body, function (err, numberAffected, raw) {
             res.send(200);
         });
     });
+
+
+    adminRouter.get('/customers', isPermittedView, function (req, res) {
+        models.customerModel.Customer.find(req.query, function (err, data, count) {
+            res.send(data);
+        });
+    });
+
+    adminRouter.post('/customers', isPermittedView, function (req, res) {
+        var data = new models.customerModel.Customer(req.body);
+        data.save(function (err, data, count) {
+            res.send(data);
+        }
+        );
+    });
+
+    adminRouter.put('/customers/:_id', isPermittedView, function (req, res) {
+        models.customerModel.Customer.findByIdAndUpdate(req.params._id, req.body, function (err, numberAffected, raw) {
+            res.send(200);
+        });
+    });
+
 
     adminRouter.use(function(req, res, next) {
         res.redirect('/admin');

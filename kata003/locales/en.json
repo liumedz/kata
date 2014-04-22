@@ -38,16 +38,23 @@
 	"web.index.contact.orEmail": "or e-mail ",
 	"web.index.navigation.up": "back to TOP",
 	"Customers": "Customers",
-
 	"admin.index.navigation.overview": "Overview",
 	"admin.index.navigation.users": "Users",
+	"admin.index.navigation.customers": "Customers",
 	"admin.index.navigation.logout": "Logout",
+	"admin.users.title": "Users",
+	"admin.users.editForm.input.email": "Email",
+	"admin.users.editForm.input.firstName": "First Name",
+	"admin.users.editForm.input.lastName": "Last Name",
+	"admin.users.editForm.input.password": "Password",
+	"admin.users.editForm.input.confirmPassword": "Confirm Pssword",
+	"admin.users.editForm.input.submit": "Save",
 
-    "admin.users.title": "Users",
-    "admin.users.editForm.input.email": "Email",
-    "admin.users.editForm.input.firstName": "First Name",
-    "admin.users.editForm.input.lastName": "Last Name",
-    "admin.users.editForm.input.password": "Password",
-    "admin.users.editForm.input.confirmPassword": "Confirm Pssword",
-    "admin.users.editForm.input.submit": "Save"
+	"admin.users.editCustomerForm.input.c": "C",
+	"admin.users.editCustomerForm.input.name": "Name",
+	"admin.users.editCustomerForm.input.code": "Code",
+	"admin.users.editCustomerForm.input.address": "Address",
+	"admin.users.editCustomerForm.input.submit": "Save"
+
+
 }

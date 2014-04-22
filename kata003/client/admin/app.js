@@ -16,6 +16,11 @@ app.config(['$routeProvider' , '$locationProvider', function ($routeProvider, $l
             templateUrl: "users-template.html",
             controller: 'usersController'
         });
+    $routeProvider.when('/admin/customers',
+        {
+            templateUrl: "customers-template.html",
+            controller: 'customersController'
+        });
 
     $routeProvider.otherwise({redirectTo: '/admin'});
 

@@ -14,13 +14,17 @@ var authorization = require('express-authorization');
 var mongoose = require('mongoose');
 var dbPath = 'mongodb://localhost/kata4';
 
-var userModel = require('./models/user')(mongoose);
+var models = {
+    userModel: require('./models/user')(mongoose),
+    customerModel: require('./models/customer')(mongoose)
+}
+
 
 var clames = require('./common/clames');
 var authorizationRoutes = require('./routes/authorization-routes')(express, clames);
 var localizationRoutes = require('./routes/localization-routes')(express);
 var webRoutes = require('./routes/web-routes')(express, authorization);
-var adminRoutes = require('./routes/admin-routes')(express, authorization, clames, userModel);
+var adminRoutes = require('./routes/admin-routes')(express, authorization, clames, models);
 
 
 i18n.configure({
