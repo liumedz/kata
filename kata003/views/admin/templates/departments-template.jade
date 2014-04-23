@@ -1,7 +1,11 @@
 h1.page-header= __('admin.index.navigation.departments')
 .row
-    .col-md-5
-        button.btn.btn-default(ng-click='onAdd()') Add
+    .col-md-4
+        .row
+            .col-md-2
+                button.btn.btn-default(ng-click='onAdd()') Add
+            .col-md-2
+                input.btn.btn-default(type='file',ng-file-select='onImport($files)')
         form(role='form')
             .form-group
                 label(for='d')= __('admin.users.editDepartmentForm.input.d')
@@ -19,7 +23,7 @@ h1.page-header= __('admin.index.navigation.departments')
                 label(for='address')= __('admin.users.editDepartmentForm.input.address')
                 input#address.form-control(type='text', placeholder="#{__('admin.users.editDepartmentForm.input.address')}", name='address', ng-model='department.address')
         button.btn.btn-default(ng-click='onSave(customer)')= __('admin.users.editDepartmentForm.input.submit')
-    .col-md-7
+    .col-md-8
         table.table(ng-table='ng')
             thead
                 tr

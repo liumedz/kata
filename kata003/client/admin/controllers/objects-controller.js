@@ -30,6 +30,7 @@ app.controller('objectsController', ['$scope', '$location' , '$routeParams', 'cu
         var _id = customer._id;
         delete customer._id;
         customersResource.update({ _id: _id }, customer);
+        load();
     };
 
     $scope.onEdit = function(object){

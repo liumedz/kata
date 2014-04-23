@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('departmentsController', ['$scope', '$location' , '$routeParams', 'customersResource', function ($scope, $location, $routeParams, customersResource) {
+app.controller('departmentsController', ['$scope', '$location', '$routeParams', '$upload', 'customersResource', function ($scope, $location, $routeParams, $upload, customersResource) {
 
     var load = function() {
         customersResource.get({ _id: $routeParams._id }).$promise.then(function(customer) {
@@ -21,6 +21,45 @@ app.controller('departmentsController', ['$scope', '$location' , '$routeParams',
     $scope.onAdd = function(){
         $scope.department = {};
         $scope.customer.departments.push($scope.department);
+    };
+
+    $scope.onImport = function ($files) {
+        var seperator = '\t';
+        var reader = new FileReader();
+
+        reader.onloadend = function() {
+
+            var csvRows = reader.result.split('\n');
+
+            var departments = {
+                columns: ['Department'].concat(csvRows[0].split(seperator)),
+                rows: []
+            };
+
+            for (var i = 1; i < csvRows.length; i++) {
+                departments.rows.push(csvRows[i].split(seperator));
+            }
+
+            for (var i = 0; i < departments.rows.length; i++) {
+
+                var department = {
+                    _customerid: $routeParams._customerid,
+                    d: departments.rows[i][0],
+                    name: departments.rows[i][1],
+                    code: departments.rows[i][2],
+                    city: departments.rows[i][3],
+                    address: departments.rows[i][4]
+                };
+
+                $scope.customer.departments.push(department);
+            }
+
+            $scope.$apply();
+        };
+
+        if ($files[0]) {
+            reader.readAsText($files[0]);
+        }
     };
 
     $scope.onSave = function(customer){
