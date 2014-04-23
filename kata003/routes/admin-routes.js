@@ -59,6 +59,11 @@ module.exports = function(express, authorization, clames, models){
         });
     });
 
+    adminRouter.delete('/customers/:_id', isPermittedView, function (req, res) {
+        models.customerModel.Customer.remove({ _id: req.params._id }, function (err, data) {
+            res.send(data);
+        });
+    });
 
     adminRouter.use(function(req, res, next) {
         res.redirect('/admin');

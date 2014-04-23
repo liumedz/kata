@@ -65,7 +65,7 @@
 	"admin.users.editDepartmentForm.input.code": "Code",
 	"admin.users.editDepartmentForm.input.address": "Address",
 	"admin.users.editDepartmentForm.input.submit": "Submit",
-    "admin.users.editDepartmentForm.input.city": "admin.users.editDepartmentForm.input.city",
+    "admin.users.editDepartmentForm.input.city": "City",
 
     "admin.users.editObjectForm.input.o": "Object",
     "admin.users.editObjectForm.input.name": "Name",
