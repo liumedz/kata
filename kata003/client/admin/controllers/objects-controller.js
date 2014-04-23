@@ -50,5 +50,18 @@ app.controller('objectsController', ['$scope', '$location' , '$routeParams', 'cu
         $location.url('/admin/customers/' + $routeParams._id + '/departments/' + department._id + '/objects');
     };
 
+    $scope.clone = function(object) {
+        for (var i = 0; i < $scope.customer.departments.length; i++) {
+
+            if ( $scope.department  !== department) {
+                
+            }
+            var department = $scope.customer.departments[i];
+            var newObject = angular.copy(object);
+            delete newObject._id;
+            department.objects.push(newObject);
+        }
+    };
+
     load();
 }]);
