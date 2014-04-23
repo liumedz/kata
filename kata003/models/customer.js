@@ -17,7 +17,7 @@
                     {
                         o: { type: Number, unique: false, required: true },
                         name: { type: String, unique: false, required: true },
-                        ratingtypes: [{
+                        ratingTypes: [{
                             r: { type: Number, required: true },
                             name: { type: String, required: true }
                         }]

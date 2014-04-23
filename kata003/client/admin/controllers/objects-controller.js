@@ -50,17 +50,19 @@ app.controller('objectsController', ['$scope', '$location' , '$routeParams', 'cu
         $location.url('/admin/customers/' + $routeParams._id + '/departments/' + department._id + '/objects');
     };
 
-    $scope.clone = function(object) {
+    $scope.clone = function(department, object) {
         for (var i = 0; i < $scope.customer.departments.length; i++) {
-
-            if ( $scope.department  !== department) {
-                
+            var currentDepartment = $scope.customer.departments[i];
+            if (currentDepartment !== department) {
+                var newObject = angular.copy(object);
+                delete newObject._id;
+                currentDepartment.objects.push(newObject);
             }
-            var department = $scope.customer.departments[i];
-            var newObject = angular.copy(object);
-            delete newObject._id;
-            department.objects.push(newObject);
         }
+    };
+
+    $scope.onRatingType = function(object){
+        $location.url('/admin/customers/' + $routeParams._id + '/departments/' + $scope.department._id + '/objects/' + object._id + '/ratingtypes');
     };
 
     load();

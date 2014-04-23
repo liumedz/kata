@@ -1,25 +1,24 @@
 h1.page-header= __('admin.index.navigation.ratingtypes')
-    .row
-        .rol-md-5
-            form(role='form')
-                .form-group
-                    label(for='r')= __('admin.users.editRatingTypeForm.input.r')
-                    input#r.form-control(type='number', placeholder="#{__('admin.users.editRatingTypeForm.input.r')}", name='r', ng-model='ratingtype.r')
-                .form-group
-                    label(for='name')= __('admin.users.editRatingTypeForm.input.name')
-                    input#name.form-control(type='text', placeholder="#{__('admin.users.editRatingTypeForm.input.name')}", name='name', ng-model='ratingtype.name')
-            button.btn.btn-default(ng-click='onSave(ratingtype)')= __('admin.users.editRatingTypeForm.input.submit')
-        .rol-md-7
-            table.table(ng-table='ng')
-                thead
-                    tr
-                        th= __('admin.users.editRatingTypeForm.input.r')
-                        th= __('admin.users.editRatingTypeForm.input.name')
-                        th
-                tbody
-                    tr(ng-repeat='ratingtype in ratingtypes')
-                        td {{ratingtype.r}}
-                        td {{ratingtype.name}}
-                        td
-                            button.btn.btn-success(ng-click='onEdit(ratingtype)')  Edit
-                      
+.row
+    .rol-md-5
+        form(role='form')
+            .form-group
+                label(for='r')= __('admin.users.editRatingTypeForm.input.r')
+                input#r.form-control(type='number', placeholder="#{__('admin.users.editRatingTypeForm.input.r')}", name='r', ng-model='ratingtype.r')
+            .form-group
+                label(for='name')= __('admin.users.editRatingTypeForm.input.name')
+                input#name.form-control(type='text', placeholder="#{__('admin.users.editRatingTypeForm.input.name')}", name='name', ng-model='ratingtype.name')
+        button.btn.btn-default(ng-click='onSave(ratingtype)')= __('admin.users.editRatingTypeForm.input.submit')
+    .rol-md-7
+        table.table(ng-table='ng')
+            thead
+                tr
+                    th= __('admin.users.editRatingTypeForm.input.r')
+                    th= __('admin.users.editRatingTypeForm.input.name')
+                    th
+            tbody
+                tr(ng-repeat='ratingtype in ratingTypes')
+                    td {{ratingtype.r}}
+                    td {{ratingtype.name}}
+                    td
+                        button.btn.btn-success(ng-click='onEdit(ratingtype)')  Edit

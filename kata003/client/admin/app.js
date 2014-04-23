@@ -31,8 +31,13 @@ app.config(['$routeProvider' , '$locationProvider', function ($routeProvider, $l
             templateUrl: "objects-template.html",
             controller: 'objectsController'
         });
+    $routeProvider.when('/admin/customers/:_id/departments/:_departmentId/objects/:_objectId/ratingtypes',
+        {
+            templateUrl: "ratingtypes-template.html",
+            controller: 'ratingTypesController'
+        });
 
-    $routeProvider.otherwise({redirectTo: '/admin'});
+   // $routeProvider.otherwise({redirectTo: '/admin'});
 
 }]);
 
