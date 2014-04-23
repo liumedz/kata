@@ -21,6 +21,16 @@ app.config(['$routeProvider' , '$locationProvider', function ($routeProvider, $l
             templateUrl: "customers-template.html",
             controller: 'customersController'
         });
+    $routeProvider.when('/admin/customers/:_id/departments',
+        {
+            templateUrl: "departments-template.html",
+            controller: 'departmentsController'
+        });
+    $routeProvider.when('/admin/customers/:_id/departments/:_departmentId/objects',
+        {
+            templateUrl: "objects-template.html",
+            controller: 'objectsController'
+        });
 
     $routeProvider.otherwise({redirectTo: '/admin'});
 

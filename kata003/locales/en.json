@@ -42,6 +42,10 @@
 	"admin.index.navigation.users": "Users",
 	"admin.index.navigation.customers": "Customers",
 	"admin.index.navigation.logout": "Logout",
+    "admin.index.navigation.departments": "Departments",
+    "admin.index.navigation.objects": "Objects",
+    "admin.index.navigation.ratingtypes": "Rating Types",
+
 	"admin.users.title": "Users",
 	"admin.users.editForm.input.email": "Email",
 	"admin.users.editForm.input.firstName": "First Name",
@@ -54,7 +58,20 @@
 	"admin.users.editCustomerForm.input.name": "Name",
 	"admin.users.editCustomerForm.input.code": "Code",
 	"admin.users.editCustomerForm.input.address": "Address",
-	"admin.users.editCustomerForm.input.submit": "Save"
+	"admin.users.editCustomerForm.input.submit": "Save",
 
+	"admin.users.editDepartmentForm.input.d": "D",
+	"admin.users.editDepartmentForm.input.name": "Name",
+	"admin.users.editDepartmentForm.input.code": "Code",
+	"admin.users.editDepartmentForm.input.address": "Address",
+	"admin.users.editDepartmentForm.input.submit": "Submit",
+    "admin.users.editDepartmentForm.input.city": "admin.users.editDepartmentForm.input.city",
 
+    "admin.users.editObjectForm.input.o": "Object",
+    "admin.users.editObjectForm.input.name": "Name",
+    "admin.users.editObjectForm.input.submit": "Save",
+
+    "admin.users.editRatingTypeForm.input.r": "R",
+    "admin.users.editRatingTypeForm.input.name": "Name",
+    "admin.users.editRatingTypeForm.input.submit": "Save"
 }

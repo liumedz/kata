@@ -1,0 +1,25 @@
+h1.page-header= __('admin.index.navigation.objects')
+.row
+    .ool-md-5
+        button.btn.btn-default(ng-click='onAdd()') Add
+        form(role='form')
+            .form-group
+                label(for='o')= __('admin.users.editObjectForm.input.o')
+                input#o.form-control(type='number', placeholder="#{__('admin.users.editObjectForm.input.o')}", name='o', ng-model='object.o')
+            .form-group
+                label(for='name')= __('admin.users.editObjectForm.input.name')
+                input#name.form-control(type='text', placeholder="#{__('admin.users.editObjectForm.input.name')}", name='name', ng-model='object.name')
+        button.btn.btn-default(ng-click='onSave(customer)')= __('admin.users.editObjectForm.input.submit')
+    .ool-md-7
+        table.table(ng-table='ng')
+            thead
+                tr
+                    th= __('admin.users.editObjectForm.input.o')
+                    th= __('admin.users.editObjectForm.input.name')
+                    th
+            tbody
+                tr(ng-repeat='object in department.objects')
+                    td {{object.o}}
+                    td {{object.name}}
+                    td
+                        button.btn.btn-success(ng-click='onEdit(object)')  Edit

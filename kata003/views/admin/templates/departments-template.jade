@@ -1,0 +1,41 @@
+h1.page-header= __('admin.index.navigation.departments')
+.row
+    .col-md-5
+        button.btn.btn-default(ng-click='onAdd()') Add
+        form(role='form')
+            .form-group
+                label(for='d')= __('admin.users.editDepartmentForm.input.d')
+                input#d.form-control(type='number', placeholder="#{__('admin.users.editDepartmentForm.input.d')}", name='d', ng-model='department.d')
+            .form-group
+                label(for='name')= __('admin.users.editDepartmentForm.input.name')
+                input#name.form-control(type='text', placeholder="#{__('admin.users.editDepartmentForm.input.name')}", name='name', ng-model='department.name')
+            .form-group
+                label(for='code')= __('admin.users.editDepartmentForm.input.code')
+                input#code.form-control(type='text', placeholder="#{__('admin.users.editDepartmentForm.input.code')}", name='code', ng-model='department.code')
+            .form-group
+                label(for='city')= __('admin.users.editDepartmentForm.input.city')
+                input#city.form-control(type='text', placeholder="#{__('admin.users.editDepartmentForm.input.city')}", name='city', ng-model='department.city')
+            .form-group
+                label(for='address')= __('admin.users.editDepartmentForm.input.address')
+                input#address.form-control(type='text', placeholder="#{__('admin.users.editDepartmentForm.input.address')}", name='address', ng-model='department.address')
+        button.btn.btn-default(ng-click='onSave(customer)')= __('admin.users.editDepartmentForm.input.submit')
+    .col-md-7
+        table.table(ng-table='ng')
+            thead
+                tr
+                    th= __('admin.users.editDepartmentForm.input.d')
+                    th= __('admin.users.editDepartmentForm.input.name')
+                    th= __('admin.users.editDepartmentForm.input.code')
+                    th= __('admin.users.editDepartmentForm.input.city')
+                    th= __('admin.users.editDepartmentForm.input.address')
+                    th
+            tbody
+                tr(ng-repeat='department in customer.departments')
+                    td {{department.d}}
+                    td {{department.name}}
+                    td {{department.code}}
+                    td {{department.city}}
+                    td {{department.address}}
+                    td
+                        button.btn.btn-success(ng-click='onEdit(department)')  Edit
+                        button.btn.btn-success(ng-click='onObject(department)')  Objects

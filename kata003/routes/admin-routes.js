@@ -39,6 +39,12 @@ module.exports = function(express, authorization, clames, models){
         });
     });
 
+    adminRouter.get('/customers/:_id', isPermittedView, function (req, res) {
+        models.customerModel.Customer.findById(req.params._id, function (err, data, count) {
+            res.send(data);
+        });
+    });
+
     adminRouter.post('/customers', isPermittedView, function (req, res) {
         var data = new models.customerModel.Customer(req.body);
         data.save(function (err, data, count) {
