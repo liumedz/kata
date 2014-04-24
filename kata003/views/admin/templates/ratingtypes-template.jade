@@ -4,11 +4,11 @@ h1.page-header= __('admin.index.navigation.ratingtypes')
         form(role='form')
             .form-group
                 label(for='r')= __('admin.users.editRatingTypeForm.input.r')
-                input#r.form-control(type='number', placeholder="#{__('admin.users.editRatingTypeForm.input.r')}", name='r', ng-model='ratingtype.r')
+                input#r.form-control(type='number', placeholder="#{__('admin.users.editRatingTypeForm.input.r')}", name='r', ng-model='ratingType.r')
             .form-group
                 label(for='name')= __('admin.users.editRatingTypeForm.input.name')
-                input#name.form-control(type='text', placeholder="#{__('admin.users.editRatingTypeForm.input.name')}", name='name', ng-model='ratingtype.name')
-        button.btn.btn-default(ng-click='onSave(ratingtype)')= __('admin.users.editRatingTypeForm.input.submit')
+                input#name.form-control(type='text', placeholder="#{__('admin.users.editRatingTypeForm.input.name')}", name='name', ng-model='ratingType.name')
+        button.btn.btn-default(ng-click='onSave(customer)')= __('admin.users.editRatingTypeForm.input.submit')
     .rol-md-7
         table.table(ng-table='ng')
             thead
@@ -17,8 +17,9 @@ h1.page-header= __('admin.index.navigation.ratingtypes')
                     th= __('admin.users.editRatingTypeForm.input.name')
                     th
             tbody
-                tr(ng-repeat='ratingtype in ratingTypes')
+                tr(ng-repeat='ratingtype in object.ratingTypes')
                     td {{ratingtype.r}}
                     td {{ratingtype.name}}
                     td
-                        button.btn.btn-success(ng-click='onEdit(ratingtype)')  Edit
+                        button.btn.btn-success(ng-click='onEdit(ratingType)')  Edit
+                        button.btn.btn-success(ng-click='onDelete(ratingType)')  Delete
