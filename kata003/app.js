@@ -16,9 +16,9 @@ var dbPath = 'mongodb://localhost/kata4';
 
 var models = {
     userModel: require('./models/user')(mongoose),
-    customerModel: require('./models/customer')(mongoose)
-}
-
+    customerModel: require('./models/customer')(mongoose),
+    ratingModel: require('./models/rating')(mongoose)
+};
 
 var clames = require('./common/clames');
 var authorizationRoutes = require('./routes/authorization-routes')(express, clames);

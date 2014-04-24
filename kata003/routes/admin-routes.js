@@ -65,6 +65,28 @@ module.exports = function(express, authorization, clames, models){
         });
     });
 
+    adminRouter.get('/statistics', function (req, res) {
+        models.customerModel.Customer.findOne(function (err, customer) {
+            models.ratingModel.Rating.find({ c: customer.c }, function (err, ratings) {
+                var statistics = ratings.map(function (rating) {
+                    return {
+                        customer: customer
+                    };
+                });
+                res.send(statistics);
+            });
+        });
+    });
+
+    adminRouter.get('/r/:c/:d/:o/:r', function (req, res) {
+        var rating = new models.ratingModel.Rating(req.params);
+        rating.save(function (err, data, count) {
+            models.ratingModel.Rating.find(function (err, data, count) {
+                res.send(data);
+            });
+        });
+    });
+
     adminRouter.use(function(req, res, next) {
         res.redirect('/admin');
     });

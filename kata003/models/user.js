@@ -13,5 +13,5 @@ module.exports = function(mongoose) {
 
     return {
         User: User
-    }
+    };
 }
