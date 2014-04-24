@@ -2,8 +2,24 @@
 
 
 app.controller('usersController', [ '$scope', 'usersResource', function ($scope, usersResource) {
-    $scope.users = usersResource.query();
-    $scope.user = {};
+
+    var load = function() {
+         usersResource.query().$promise.then(function(users){
+            $scope.users = users;
+            $scope.user = {};
+            selectFirst();
+        });
+
+    }
+
+    var selectFirst = function() {
+        if ($scope.users.length > 0) {
+            $scope.user = $scope.users[0];
+        } else {
+            $scope.users.push({});
+        }
+        $scope.user = $scope.users[0];
+    };
 
     $scope.onSave = function(user){
 
@@ -22,4 +38,7 @@ app.controller('usersController', [ '$scope', 'usersResource', function ($scope,
     $scope.onEdit = function(user){
         $scope.user = user;
     };
+
+    load();
+
 }]);
