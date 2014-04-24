@@ -69,9 +69,51 @@ module.exports = function(express, authorization, clames, models){
         models.customerModel.Customer.findOne(function (err, customer) {
             models.ratingModel.Rating.find({ c: customer.c }, function (err, ratings) {
                 var statistics = ratings.map(function (rating) {
+
+                    var newDepartment = {};
+                    var newObject = {};
+                    var newRating = {};
+
+                    customer.departments.filter(function (item) {
+                        return item.d === rating.d
+                    }).forEach(function (item) {
+                        newDepartment = item;
+                        item.objects.filter(function (item) {
+                            return item.o === rating.o;
+                        }).forEach(function (item) {
+                            newObject = item;
+                            item.ratingTypes.filter(function (item) {
+                                return item.r === rating.r;
+                            }).forEach(function(item){
+                                newRating = item
+                            });
+                        });
+                    });
+
+
                     return {
-                        customer: customer
+                        customer: {
+                            c: customer.c,
+                            name: customer.name,
+                            code: customer.code,
+                            address: customer.address
+                        },
+                        department: {
+                            d: newDepartment.d,
+                            name: newDepartment.name,
+                            code: newDepartment.code,
+                            address: newDepartment.address
+                        },
+                        object: {
+                            o: newObject.o,
+                            name: newObject.name
+                        },
+                        rating: {
+                            r: newRating.r,
+                            name: newRating.name
+                        }
                     };
+
                 });
                 res.send(statistics);
             });
