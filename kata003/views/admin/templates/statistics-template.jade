@@ -1,0 +1,25 @@
+h1.page-header= __('admin.index.navigation.statistics')
+.row
+    table.table(ng-table='ng')
+        thead
+            tr
+                th= __('admin.users.editCustomerForm.input.c')
+                th= __('admin.users.editCustomerForm.input.name')
+                th= __('admin.users.editCustomerForm.input.code')
+                th= __('admin.users.editCustomerForm.input.address')
+                th= __('admin.users.editCustomerForm.input.name')
+                th= __('admin.users.editCustomerForm.input.code')
+                th= __('admin.users.editCustomerForm.input.address')
+                th= __('admin.users.editCustomerForm.input.name')
+                th= __('admin.users.editCustomerForm.input.name')
+        tbody
+            tr(ng-repeat='statistic in statistics')
+                td {{statistic.customer.c}}
+                td {{statistic.customer.name}}
+                td {{statistic.customer.code}}
+                td {{statistic.customer.address}}
+                td {{statistic.department.name}}
+                td {{statistic.department.code}}
+                td {{statistic.department.address}}
+                td {{statistic.object.name}}
+                td {{statistic.rating.name}}

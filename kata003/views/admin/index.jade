@@ -29,6 +29,8 @@ block scripts
     script(src='/admin/controllers/departments-controller.js')
     script(src='/admin/controllers/objects-controller.js')
     script(src='/admin/controllers/ratingtypes-controller.js')
+    script(src='/admin/controllers/statistics-controller.js')
+    script(src='/admin/resources/statistics-resource.js')
     // scripts end
 
 block global
@@ -38,6 +40,7 @@ block global
                 {title: "#{__('admin.index.navigation.overview')}", url: '/admin', active: 'active'}, 
                 {title: "#{__('admin.index.navigation.users')}", url: '/admin/users'},
                 {title: "#{__('admin.index.navigation.customers')}", url: '/admin/customers'}, 
+                {title: "#{__('admin.index.navigation.statistics')}", url: '/admin/statistics'},
                 {title: "#{__('admin.index.navigation.logout')}", url: '/admin/logout'}
            ]
         };

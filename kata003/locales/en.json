@@ -41,6 +41,7 @@
 	"admin.index.navigation.overview": "Overview",
 	"admin.index.navigation.users": "Users",
 	"admin.index.navigation.customers": "Customers",
+	"admin.index.navigation.statistics": "Statistics",
 	"admin.index.navigation.logout": "Logout",
     "admin.index.navigation.departments": "Departments",
     "admin.index.navigation.objects": "Objects",

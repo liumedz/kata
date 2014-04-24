@@ -37,6 +37,12 @@ app.config(['$routeProvider' , '$locationProvider', function ($routeProvider, $l
             controller: 'ratingTypesController'
         });
 
+    $routeProvider.when('/admin/statistics',
+        {
+            templateUrl: "statistics-template.html",
+            controller: 'statisticsController'
+        });
+
    // $routeProvider.otherwise({redirectTo: '/admin'});
 
 }]);

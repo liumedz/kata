@@ -39,6 +39,7 @@
 	"web.index.navigation.up": "Į viršų",
 	"admin.index.navigation.overview": "Pradžia",
 	"admin.index.navigation.users": "Vartotojai",
+    "admin.index.navigation.statistics": "Statistika",
 	"admin.index.navigation.logout": "Atsijungti",
 	"admin.index.navigation.departments": "Skyriai",
 	"admin.index.navigation.objects": "Objektai",
