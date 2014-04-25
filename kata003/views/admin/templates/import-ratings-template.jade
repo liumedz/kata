@@ -1,0 +1,23 @@
+h1.page-header= __('admin.index.navigation.import.ratings')
+.row
+    .row
+        .col-md-2
+            input.btn.btn-default(type='file',ng-file-select='onImport($files)')
+    .row
+        table.table(ng-table='ng')
+            thead
+                tr
+                    th= __('admin.import.ratings.created')
+                    th= __('admin.import.ratings.c')
+                    th= __('admin.import.ratings.d')
+                    th= __('admin.import.ratings.o')
+                    th= __('admin.import.ratings.r')
+                    th= __('admin.import.ratings.isImported')
+            tbody
+                tr(ng-repeat='rating in ratings')
+                    td {{rating.created}}
+                    td {{rating.c}}
+                    td {{rating.d}}
+                    td {{rating.o}}
+                    td {{rating.r}}
+                    td {{rating.isImported}}

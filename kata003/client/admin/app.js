@@ -43,6 +43,12 @@ app.config(['$routeProvider' , '$locationProvider', function ($routeProvider, $l
             controller: 'statisticsController'
         });
 
+    $routeProvider.when('/admin/import/ratings',
+        {
+            templateUrl: "import-ratings-template.html",
+            controller: 'importRatingsController'
+        });
+
    // $routeProvider.otherwise({redirectTo: '/admin'});
 
 }]);

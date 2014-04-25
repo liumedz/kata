@@ -39,7 +39,7 @@
 	"web.index.navigation.up": "Į viršų",
 	"admin.index.navigation.overview": "Pradžia",
 	"admin.index.navigation.users": "Vartotojai",
-    "admin.index.navigation.statistics": "Statistika",
+	"admin.index.navigation.statistics": "Statistika",
 	"admin.index.navigation.logout": "Atsijungti",
 	"admin.index.navigation.departments": "Skyriai",
 	"admin.index.navigation.objects": "Objektai",
@@ -66,7 +66,14 @@
 	"admin.users.editObjectForm.input.name": "Pavadinimas",
 	"admin.users.editObjectForm.input.submit": "Išsaugoti",
 	"admin.users.editObjectForm.input.r": "R",
-	"admin.users.editRatingTypeForm.input.r": "admin.users.editRatingTypeForm.input.r",
-	"admin.users.editRatingTypeForm.input.name": "admin.users.editRatingTypeForm.input.name",
-	"admin.users.editRatingTypeForm.input.submit": "admin.users.editRatingTypeForm.input.submit"
+	"admin.users.editRatingTypeForm.input.r": "R",
+	"admin.users.editRatingTypeForm.input.name": "Pavadinimas",
+	"admin.users.editRatingTypeForm.input.submit": "Išsaugoti",
+	"admin.index.navigation.import.ratings": "Importuoti įvertinimus",
+	"admin.import.ratings.created": "Data",
+	"admin.import.ratings.c": "Klientas",
+	"admin.import.ratings.d": "Skyrius",
+	"admin.import.ratings.o": "Objektas",
+	"admin.import.ratings.r": "Įvertinimas",
+	"admin.import.ratings.isImported": "Importuota"
 }

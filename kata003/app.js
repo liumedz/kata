@@ -25,6 +25,7 @@ var authorizationRoutes = require('./routes/authorization-routes')(express, clam
 var localizationRoutes = require('./routes/localization-routes')(express);
 var webRoutes = require('./routes/web-routes')(express, authorization);
 var adminRoutes = require('./routes/admin-routes')(express, authorization, clames, models);
+var api = require('./api/api')(express, authorization, clames, models);
 
 
 i18n.configure({
@@ -63,7 +64,9 @@ app.use(i18n.init);
 app.use('/', authorizationRoutes);
 app.use('/', localizationRoutes);
 app.use('/', webRoutes);
+app.use('/api', api);
 app.use('/admin', adminRoutes);
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

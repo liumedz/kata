@@ -1,6 +1,7 @@
 h1.page-header= __('admin.index.navigation.ratingtypes')
 .row
     .rol-md-5
+        button.btn.btn-default(ng-click='onAdd()') Add
         form(role='form')
             .form-group
                 label(for='r')= __('admin.users.editRatingTypeForm.input.r')
