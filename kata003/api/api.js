@@ -8,6 +8,9 @@ module.exports = function(express, authorization, clames, models){
         models.userModel.User.find(req.query, function (err, data, count) {
             res.send(data);
         });
+ /*       models.userModel.User.find(req.query).populate('customers').exec(function (err, data, count) {
+            res.send(data);
+        });*/
     });
 
     apiRouter.post('/users', isPermittedView, function(req, res) {
@@ -21,6 +24,12 @@ module.exports = function(express, authorization, clames, models){
     apiRouter.put('/users/:_id', isPermittedView, function(req, res) {
         models.userModel.User.findByIdAndUpdate(req.params._id, req.body, function (err, numberAffected, raw) {
             res.send(200);
+        });
+    });
+
+    apiRouter.delete('/users/:_id', isPermittedView, function(req, res) {
+        models.userModel.User.remove({_id: req.params._id}, function (err, data) {
+            res.send(data);
         });
     });
 
