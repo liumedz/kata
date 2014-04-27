@@ -1,6 +1,6 @@
 h1.page-header= __('admin.index.navigation.ratingtypes')
 .row
-    .rol-md-5
+    .col-md-5
         button.btn.btn-default(ng-click='onAdd()') Add
         form(role='form')
             .form-group
@@ -10,7 +10,7 @@ h1.page-header= __('admin.index.navigation.ratingtypes')
                 label(for='name')= __('admin.users.editRatingTypeForm.input.name')
                 input#name.form-control(type='text', placeholder="#{__('admin.users.editRatingTypeForm.input.name')}", name='name', ng-model='ratingType.name')
         button.btn.btn-default(ng-click='onSave(customer)')= __('admin.users.editRatingTypeForm.input.submit')
-    .rol-md-7
+    .col-md-7
         table.table(ng-table='ng')
             thead
                 tr

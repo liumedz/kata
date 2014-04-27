@@ -1,9 +1,6 @@
 module.exports = {
     webIndex: "web:index",
-
-
-
-    defaultCustomerClaims: []
+    usersManagement: "users-management"
 };
 
 

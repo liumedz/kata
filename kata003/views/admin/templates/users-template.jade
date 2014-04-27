@@ -1,49 +1,47 @@
-h1.page-header= __('admin.index.navigation.users')
+h1.page-header= __('admin.users.title')
 .row
     .col-md-5
-        button.btn.btn-default(ng-click='onAdd()') Add
+        button.btn.btn-default(ng-click='onAdd()')= __('admin.users.add')
         form(role='form', method='post', action='admin/users/')
             .form-group
-                label(for='email')= __('admin.users.editForm.input.email')
-                input#email.form-control(type='email', placeholder="#{__('admin.users.editForm.input.email')}", name='email', ng-model='user.email')
+                label(for='email')= __('admin.users.email')
+                input#email.form-control(type='email', placeholder="#{__('admin.users.email')}", name='email', ng-model='user.email')
             .form-group
-                label(for='firstName')= __('admin.users.editForm.input.firstName')
-                input#first-name.form-control(type='text', placeholder="#{__('admin.users.editForm.input.firstName')}", name='firstName', ng-model='user.firstName')
+                label(for='firstName')= __('admin.users.firstName')
+                input#first-name.form-control(type='text', placeholder="#{__('admin.users.firstName')}", name='firstName', ng-model='user.firstName')
             .form-group
-                label(for='firstName')= __('admin.users.editForm.input.lastName')
-                input#last-name.form-control(type='text', placeholder="#{__('admin.users.editForm.input.lastName')}", name='lastName', ng-model='user.lastName')
+                label(for='firstName')= __('admin.users.lastName')
+                input#last-name.form-control(type='text', placeholder="#{__('admin.users.lastName')}", name='lastName', ng-model='user.lastName')
             .form-group
-                label(for='password')= __('admin.users.editForm.input.password')
-                input#password.form-control(type='password', placeholder="#{__('admin.users.editForm.input.password')}", name='password', ng-model='user.password')
+                label(for='password')= __('admin.users.password')
+                input#password.form-control(type='password', placeholder="#{__('admin.users.password')}", name='password', ng-model='user.password')
             .form-group
-                label(for='confirmPassword')= __('admin.users.editForm.input.confirmPassword')
-                input#confirm-password.form-control(type='password', placeholder="#{__('admin.users.editForm.input.confirmPassword')}", name='confirmPassword', ng-model='user.confirmPassword')
-        button.btn.btn-default(ng-click='onSave(user)')= __('admin.users.editForm.input.submit')
+                label(for='confirmPassword')= __('admin.users.confirmPassword')
+                input#confirm-password.form-control(type='password', placeholder="#{__('admin.users.confirmPassword')}", name='confirmPassword', ng-model='user.confirmPassword')
+        button.btn.btn-default(ng-click='onSave(user)')= __('admin.users.submit')
     .col-md-7
         table.table(ng-table='ng')
             thead
                 tr
-                    th= __('admin.users.editForm.input.email')
-                    th= __('admin.users.editForm.input.firstName')
-                    th= __('admin.users.editForm.input.lastName')
-                    th= __('admin.users.editForm.input.password')
+                    th= __('admin.users.email')
+                    th= __('admin.users.firstName')
+                    th= __('admin.users.lastName')
                     th
             tbody
                 tr(ng-repeat='user in users')
                     td {{user.email}}
                     td {{user.firstName}}
                     td {{user.lastName}}
-                    td {{user.password}}
                     td
-                        button.btn.btn-success(ng-click='onEdit(user)')  Edit
-                        button.btn.btn-success(ng-click='onDelete(user)')  Delete
+                        button.btn.btn-success(ng-click='onEdit(user)')=  __('admin.users.edit')
+                        button.btn.btn-success(ng-click='onDelete(user)')=  __('admin.users.delete')
 
         table.table(ng-table='ng')
             thead
                 tr
-                    th= __('admin.users.editCustomerForm.input.name')
-                    th= __('admin.users.editCustomerForm.input.code')
-                    th= __('admin.users.editCustomerForm.input.address')
+                    th= __('admin.users.customers.name')
+                    th= __('admin.users.customers.code')
+                    th= __('admin.users.customers.address')
                     th
             tbody
                 tr(ng-repeat='customer in customers')
@@ -53,7 +51,22 @@ h1.page-header= __('admin.index.navigation.users')
                     td
                         div(ng-switch on="isAssigned(customer)")
                             div(ng-switch-when="false")
-                                button.btn.btn-success(ng-click='onAssign(customer)')  Assign
+                                button.btn.btn-success(ng-click='onAssign(customer)')= __('admin.users.customers.assign')
                             div(ng-switch-when="true")
-                                button.btn.btn-success(ng-click='onAssign(customer)')  Unassign
+                                button.btn.btn-success(ng-click='onAssign(customer)')= __('admin.users.customers.unassign')
+
+        table.table(ng-table='ng')
+            thead
+                tr
+                    th= __('admin.users.claims.name')
+                    th
+            tbody
+                tr(ng-repeat='claim in claims')
+                    td {{claim}}
+                    td
+                        div(ng-switch on="isAssigned(claim)")
+                            div(ng-switch-when="false")
+                                button.btn.btn-success(ng-click='onAssign(claim)')= __('admin.users.claims.assign')
+                            div(ng-switch-when="true")
+                                button.btn.btn-success(ng-click='onAssign(claim)')= __('admin.users.claims.unassign')
 

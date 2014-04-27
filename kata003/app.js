@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var expressSession = require('express-session');
 var i18n = require("i18n");
+var crypto = require("crypto");
 
 
 var authorization = require('express-authorization');
@@ -26,6 +27,8 @@ var localizationRoutes = require('./routes/localization-routes')(express);
 var webRoutes = require('./routes/web-routes')(express, authorization);
 var adminRoutes = require('./routes/admin-routes')(express, authorization, clames, models);
 var api = require('./api/api')(express, authorization, clames, models);
+var usersApi = require('./api/users-api')(express, authorization, clames, models, crypto);
+var claimsApi = require('./api/claims-api')(express, authorization, clames);
 
 
 i18n.configure({
@@ -65,6 +68,8 @@ app.use('/', authorizationRoutes);
 app.use('/', localizationRoutes);
 app.use('/', webRoutes);
 app.use('/api', api);
+app.use('/api', usersApi);
+app.use('/api', claimsApi);
 app.use('/admin', adminRoutes);
 
 

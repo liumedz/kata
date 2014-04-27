@@ -15,7 +15,7 @@ module.exports = function(express, clames){
         req.session.user = {
             username: 'root',
             role: 'admin',
-            permissions: [ clames.webIndex ]
+            permissions: [ clames.webIndex, clames.usersManagement ]
         };
 
         switch ( req.session.user.role){

@@ -1,17 +1,24 @@
 'use strict';
 
 
-app.controller('usersController', [ '$scope', 'usersResource', 'customersResource', function ($scope, usersResource, customersResource) {
+app.controller('usersController', [ '$scope', 'usersResource', 'claimsResource', 'customersResource', function ($scope, usersResource, claimsResource, customersResource) {
 
     var load = function() {
          usersResource.query().$promise.then(function(users){
             $scope.users = users;
             $scope.user = {};
             selectFirst();
-             loadCustomers();
+            loadClaims();
+            loadCustomers();
         });
 
 
+    };
+
+    var loadClaims = function(){
+        claimsResource.query().$promise.then(function(claims){
+            $scope.claims = claims;
+        });
     };
 
     var loadCustomers = function(){
@@ -68,7 +75,7 @@ app.controller('usersController', [ '$scope', 'usersResource', 'customersResourc
         });
 
         if(currentCustomer.length > 0){
-            $scope.user.customers.splice($scope.user.customers.indexOf(currentCustomer), 1);
+            $scope.user.customers.splice($scope.user.customers.indexOf(currentCustomer[0]), 1);
         }
         else{
             $scope.user.customers.push(customer._id);
