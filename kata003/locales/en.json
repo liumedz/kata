@@ -60,9 +60,9 @@
 	"admin.users.customers.address": "Address",
 	"admin.users.customers.assign": "Assign",
 	"admin.users.customers.unassign": "Unassign",
-	"admin.users.claims.name": "Leidimas",
-	"admin.users.claims.assign": "Priskirti",
-	"admin.users.claims.unassign": "Atskirti",
+	"admin.users.permissions.title": "Permissions",
+	"admin.users.permissions.assign": "Assign",
+	"admin.users.permissions.unassign": "Unassign",
 	"admin.users.editCustomerForm.input.c": "C",
 	"admin.users.editCustomerForm.input.name": "Name",
 	"admin.users.editCustomerForm.input.code": "Code",
@@ -86,5 +86,8 @@
 	"admin.import.ratings.d": "Department",
 	"admin.import.ratings.o": "Organization",
 	"admin.import.ratings.r": "Ratings",
-	"admin.import.ratings.isImported": "Is Imported"
+	"admin.import.ratings.isImported": "Is Imported",
+	"admin.users.permissions.name": "admin.users.permissions.name",
+	"admin.users.permissions.assign": "admin.users.permissions.assign",
+	"admin.users.permissions.unassign": "admin.users.permissions.unassign"
 }

@@ -1,6 +1,6 @@
-module.exports = function(express, authorization, clames, models){
+module.exports = function(express, authorization, permissions, models){
 
-    var isPermittedView = authorization.ensureRequest.isPermitted(clames.webIndex);
+    var isPermittedView = authorization.ensureRequest.isPermitted(permissions.webIndex);
 
     var apiRouter = express.Router();
 

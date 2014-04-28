@@ -1,23 +1,23 @@
 'use strict';
 
 
-app.controller('usersController', [ '$scope', 'usersResource', 'claimsResource', 'customersResource', function ($scope, usersResource, claimsResource, customersResource) {
+app.controller('usersController', [ '$scope', 'usersResource', 'permissionsResource', 'customersResource', function ($scope, usersResource, permissionsResource, customersResource) {
 
     var load = function() {
          usersResource.query().$promise.then(function(users){
             $scope.users = users;
             $scope.user = {};
             selectFirst();
-            loadClaims();
+            loadPermissions();
             loadCustomers();
         });
 
 
     };
 
-    var loadClaims = function(){
-        claimsResource.query().$promise.then(function(claims){
-            $scope.claims = claims;
+    var loadPermissions = function(){
+        permissionsResource.query().$promise.then(function(permissions){
+            $scope.permissions = permissions;
         });
     };
 
@@ -87,7 +87,39 @@ app.controller('usersController', [ '$scope', 'usersResource', 'claimsResource',
         loadCustomers();
     };
 
+    $scope.isAssignedPermission = function(permission){
+        if($scope.user.permissions){
+            return $scope.user.permissions.filter(function(item){
+                return item === permission;
+            }).length > 0;
+        }
+        else{
+            return false;
+        }
+    };
+
+    $scope.onAssignPermission = function (permission) {
+
+        if(!$scope.user.permissions){
+            $scope.user.permissions = [];
+        }
+
+        var index = $scope.user.permissions.indexOf(permission);
+        if(index > -1){
+            $scope.user.permissions.splice(index, 1);
+        }
+        else{
+            $scope.user.permissions.push(permission);
+        }
+
+        var _id = $scope.user._id;
+        delete $scope.user._id;
+        usersResource.update({ _id: _id }, $scope.user);
+
+        load();
+        loadCustomers();
+    };
+
     load();
-   // loadCustomers();
 
 }]);

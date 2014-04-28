@@ -6,7 +6,8 @@ module.exports = function(mongoose) {
         firstName: { type: String, unique: false, required: true},
         lastName: { type: String, unique: false, required: true},
         locked: { type: Boolean},
-        customers : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Customer' }]
+        customers : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Customer' }],
+        permissions: {}
     });
 
     User = mongoose.model('User', UserSchema);

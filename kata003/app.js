@@ -21,14 +21,14 @@ var models = {
     ratingModel: require('./models/rating')(mongoose)
 };
 
-var clames = require('./common/clames');
-var authorizationRoutes = require('./routes/authorization-routes')(express, clames);
+var permissions = require('./common/permissions');
+var authorizationRoutes = require('./routes/authorization-routes')(express, permissions);
 var localizationRoutes = require('./routes/localization-routes')(express);
 var webRoutes = require('./routes/web-routes')(express, authorization);
-var adminRoutes = require('./routes/admin-routes')(express, authorization, clames, models);
-var api = require('./api/api')(express, authorization, clames, models);
-var usersApi = require('./api/users-api')(express, authorization, clames, models, crypto);
-var claimsApi = require('./api/claims-api')(express, authorization, clames);
+var adminRoutes = require('./routes/admin-routes')(express, authorization, permissions, models);
+var api = require('./api/api')(express, authorization, permissions, models);
+var usersApi = require('./api/users-api')(express, authorization, permissions, models, crypto);
+var permissionsApi = require('./api/permissions-api')(express, authorization, permissions);
 
 
 i18n.configure({
@@ -69,7 +69,7 @@ app.use('/', localizationRoutes);
 app.use('/', webRoutes);
 app.use('/api', api);
 app.use('/api', usersApi);
-app.use('/api', claimsApi);
+app.use('/api', permissionsApi);
 app.use('/admin', adminRoutes);
 
 
