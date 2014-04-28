@@ -18,7 +18,8 @@ var dbPath = 'mongodb://localhost/kata4';
 var models = {
     userModel: require('./models/user')(mongoose),
     customerModel: require('./models/customer')(mongoose),
-    ratingModel: require('./models/rating')(mongoose)
+    ratingModel: require('./models/rating')(mongoose),
+    roleModel: require('./models/role')(mongoose)
 };
 
 var permissions = require('./common/permissions');
@@ -28,6 +29,7 @@ var webRoutes = require('./routes/web-routes')(express, authorization);
 var adminRoutes = require('./routes/admin-routes')(express, authorization, permissions, models);
 var api = require('./api/api')(express, authorization, permissions, models);
 var usersApi = require('./api/users-api')(express, authorization, permissions, models, crypto);
+var rolesApi = require('./api/roles-api')(express, authorization, permissions, models);
 var permissionsApi = require('./api/permissions-api')(express, authorization, permissions);
 
 
@@ -69,6 +71,7 @@ app.use('/', localizationRoutes);
 app.use('/', webRoutes);
 app.use('/api', api);
 app.use('/api', usersApi);
+app.use('/api', rolesApi);
 app.use('/api', permissionsApi);
 app.use('/admin', adminRoutes);
 

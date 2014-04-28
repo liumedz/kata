@@ -34,6 +34,8 @@ block scripts
     script(src='/admin/controllers/import-ratings-controller.js')
     script(src='/admin/resources/ratings-resource.js')
     script(src='/admin/resources/permissions-resource.js')
+    script(src='/admin/controllers/roles-controller.js')
+    script(src='/admin/resources/roles-resource.js')
     // scripts end
 
 block global
@@ -42,7 +44,8 @@ block global
             mainMenus:  [
                 {title: "#{__('admin.index.navigation.overview')}", url: '/admin', active: 'active'}, 
                 {title: "#{__('admin.users.title')}", url: '/admin/users'},
-                {title: "#{__('admin.index.navigation.customers')}", url: '/admin/customers'}, 
+                {title: "#{__('admin.roles.title')}", url: '/admin/roles'},
+                {title: "#{__('admin.index.navigation.customers')}", url: '/admin/customers'},
                 {title: "#{__('admin.index.navigation.statistics')}", url: '/admin/statistics'},
                 {title: "#{__('admin.index.navigation.import.ratings')}", url: '/admin/import/ratings'},
                 {title: "#{__('admin.index.navigation.logout')}", url: '/admin/logout'}

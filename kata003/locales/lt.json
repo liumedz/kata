@@ -87,5 +87,11 @@
 	"admin.import.ratings.d": "Skyrius",
 	"admin.import.ratings.o": "Objektas",
 	"admin.import.ratings.r": "Įvertinimas",
-	"admin.import.ratings.isImported": "Importuota"
+	"admin.import.ratings.isImported": "Importuota",
+	"admin.roles.title": "Rolės",
+	"admin.roles.add": "Pridėti",
+	"admin.roles.name": "Pavadinimas",
+	"admin.roles.submit": "Išsaugoti",
+	"admin.roles.edit": "Redaguoti",
+	"admin.roles.delete": "Ištrinti"
 }

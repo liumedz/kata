@@ -55,18 +55,3 @@ h1.page-header= __('admin.users.title')
                             div(ng-switch-when="true")
                                 button.btn.btn-success(ng-click='onAssign(customer)')= __('admin.users.customers.unassign')
 
-        table.table(ng-table='ng')
-            thead
-                tr
-                    th= __('admin.users.permissions.title')
-                    th
-            tbody
-                tr(ng-repeat='permission in permissions')
-                    td {{permission.name}}
-                    td
-                        div(ng-switch on="isAssignedPermission(permission.name)")
-                            div(ng-switch-when="false")
-                                button.btn.btn-success(ng-click='onAssignPermission(permission.name)')= __('admin.users.permissions.assign')
-                            div(ng-switch-when="true")
-                                button.btn.btn-success(ng-click='onAssignPermission(permission.name)')= __('admin.users.permissions.unassign')
-

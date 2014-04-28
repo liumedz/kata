@@ -87,7 +87,11 @@
 	"admin.import.ratings.o": "Organization",
 	"admin.import.ratings.r": "Ratings",
 	"admin.import.ratings.isImported": "Is Imported",
-	"admin.users.permissions.name": "admin.users.permissions.name",
-	"admin.users.permissions.assign": "admin.users.permissions.assign",
-	"admin.users.permissions.unassign": "admin.users.permissions.unassign"
+	"admin.users.permissions.name": "Name",
+	"admin.roles.title": "Roles",
+	"admin.roles.add": "Add",
+	"admin.roles.name": "Name",
+	"admin.roles.submit": "Save",
+	"admin.roles.edit": "Edit",
+	"admin.roles.delete": "Delete"
 }

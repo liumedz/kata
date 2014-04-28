@@ -1,0 +1,36 @@
+h1.page-header= __('admin.roles.title')
+.row
+    .col-md-5
+        button.btn.btn-default(ng-click='onAdd()')= __('admin.roles.add')
+        form(role='form', method='post', action='admin/roles/')
+            .form-group
+                label(for='name')= __('admin.roles.name')
+                input#name.form-control(type='name', placeholder="#{__('admin.roles.name')}", name='name', ng-model='role.name')
+        button.btn.btn-default(ng-click='onSave(role)')= __('admin.roles.submit')
+    .col-md-7
+        table.table(ng-table='ng')
+            thead
+                tr
+                    th= __('admin.roles.name')
+                     th
+            tbody
+                tr(ng-repeat='role in roles')
+                    td {{role.name}}
+                    td
+                        button.btn.btn-success(ng-click='onEdit(role)')=  __('admin.roles.edit')
+                        button.btn.btn-success(ng-click='onDelete(role)')=  __('admin.roles.delete')
+        table.table(ng-table='ng')
+            thead
+                tr
+                    th= __('admin.users.permissions.title')
+                    th
+            tbody
+                tr(ng-repeat='permission in permissions')
+                    td {{permission.name}}
+                    td
+                        div(ng-switch on="isAssignedPermission(permission.name)")
+                            div(ng-switch-when="false")
+                                button.btn.btn-success(ng-click='onAssignPermission(permission.name)')= __('admin.users.permissions.assign')
+                            div(ng-switch-when="true")
+                                button.btn.btn-success(ng-click='onAssignPermission(permission.name)')= __('admin.users.permissions.unassign')
+
