@@ -93,5 +93,13 @@
 	"admin.roles.name": "Name",
 	"admin.roles.submit": "Save",
 	"admin.roles.edit": "Edit",
-	"admin.roles.delete": "Delete"
+	"admin.roles.delete": "Delete",
+	"admin.users.roles.name": "Name",
+	"admin.roles.permissions.assign": "Assign",
+	"admin.roles.permissions.unassign": "Unassign",
+	"admin.roles.permissions.name": "Name",
+	"admin.roles.assign": "Assign",
+	"admin.roles.unassign": "Unassign",
+	"admin.users.roles.assign": "Assign",
+	"admin.users.roles.unassign": "Unassign"
 }

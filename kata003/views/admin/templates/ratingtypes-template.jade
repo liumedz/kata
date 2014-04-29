@@ -18,9 +18,9 @@ h1.page-header= __('admin.index.navigation.ratingtypes')
                     th= __('admin.users.editRatingTypeForm.input.name')
                     th
             tbody
-                tr(ng-repeat='ratingtype in object.ratingTypes')
-                    td {{ratingtype.r}}
-                    td {{ratingtype.name}}
+                tr(ng-repeat='ratingType in object.ratingTypes')
+                    td {{ratingType.r}}
+                    td {{ratingType.name}}
                     td
                         button.btn.btn-success(ng-click='onEdit(ratingType)')  Edit
                         button.btn.btn-success(ng-click='onDelete(ratingType)')  Delete

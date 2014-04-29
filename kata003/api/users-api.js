@@ -8,9 +8,6 @@ module.exports = function(express, authorization, permissions, models, crypto){
         models.userModel.User.find(req.query, {password: 0}, function (err, data, count) {
             res.send(data);
         });
-        /*       models.userModel.User.find(req.query).populate('customers').exec(function (err, data, count) {
-         res.send(data);
-         });*/
     });
 
     apiRouter.post('/users', isPermittedView, function(req, res) {

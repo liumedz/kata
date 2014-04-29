@@ -1,7 +1,8 @@
 'use strict';
 
 
-app.controller('usersController', [ '$scope', 'usersResource', 'customersResource', function ($scope, usersResource, customersResource) {
+app.controller('usersController', [ '$scope', 'usersResource', 'customersResource', 'rolesResource', function ($scope, usersResource, customersResource, rolesResource) {
+
 
     var load = function() {
          usersResource.query().$promise.then(function(users){
@@ -9,14 +10,17 @@ app.controller('usersController', [ '$scope', 'usersResource', 'customersResourc
             $scope.user = {};
             selectFirst();
             loadCustomers();
+            loadRoles();
         });
     };
 
     var loadCustomers = function(){
-        customersResource.query().$promise.then(function(customers){
-            $scope.customers = customers;
-        });
+        $scope.customers = customersResource.query();
     };
+
+    var loadRoles = function(){
+        $scope.roles = rolesResource.query();
+    }
 
     var selectFirst = function() {
         if ($scope.users.length > 0) {
@@ -76,6 +80,38 @@ app.controller('usersController', [ '$scope', 'usersResource', 'customersResourc
         usersResource.update({ _id: _id }, $scope.user);
         load();
         loadCustomers();
+    };
+
+    $scope.isAssignedRole = function(role){
+        if($scope.user.roles){
+            return $scope.user.roles.filter(function(item){
+                return item === role._id;
+            }).length > 0;
+        }
+        else{
+            return false;
+        }
+    };
+
+    $scope.onAssignRole = function (role) {
+
+        if(!$scope.user.roles){
+            $scope.user.roles = [];
+        }
+
+        var index = $scope.user.roles.indexOf(role._id);
+        if(index > -1){
+            $scope.user.roles.splice(index, 1);
+        }
+        else{
+            $scope.user.roles.push(role._id);
+        }
+
+        var _id = $scope.user._id;
+        delete $scope.user._id;
+        usersResource.update({ _id: _id }, $scope.user);
+
+        load();
     };
 
     load();

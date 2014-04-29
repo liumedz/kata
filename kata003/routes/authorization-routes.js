@@ -1,4 +1,4 @@
-module.exports = function(express, clames){
+module.exports = function(express, clames, models, crypto){
 
     var authorization = express.Router();
 
@@ -11,23 +11,35 @@ module.exports = function(express, clames){
     });
 
     authorization.post('/login', function(req, res, next) {
+        var shaSum = crypto.createHash('sha256');
+        shaSum.update(req.body.password);
+        models.userModel.User.findOne({email: req.body.email, password: shaSum.digest('hex')}).populate('roles').exec(function (err, user) {
+            req.session.user = {
+                email: user.email,
+                roles: user.roles.map(function(item){return item.name}),
+            }
 
-        req.session.user = {
-            username: 'root',
-            role: 'admin',
-            permissions: [ clames.webIndex, clames.usersManagement ]
-        };
+            req.session.user.permissions = [];
 
-        switch ( req.session.user.role){
-            case 'user':
-                res.redirect('/analytics');
-                break;
-            case 'admin':
-                res.redirect('/admin');
-                break;
-            default:
-                res.redirect('/');
-        }
+            user.roles.forEach(function(role){
+                role.permissions.forEach(function(permission){
+                    var index =  req.session.user.permissions.indexOf(permission);
+                    if(index < 0){
+                        req.session.user.permissions.push(permission);
+                    }
+                });
+            });
+
+            if(req.session.user.roles){
+                var index = req.session.user.roles.indexOf('admin');
+                if(index > -1){
+                    res.redirect('/admin');
+                }
+                else{
+                    res.redirect('/');
+                }
+            }
+        });
     });
 
     return authorization;

@@ -93,5 +93,9 @@
 	"admin.roles.name": "Pavadinimas",
 	"admin.roles.submit": "Išsaugoti",
 	"admin.roles.edit": "Redaguoti",
-	"admin.roles.delete": "Ištrinti"
+	"admin.roles.delete": "Ištrinti",
+	"admin.users.roles.name": "Rolė",
+	"admin.users.roles.assign": "Priskirti",
+	"admin.users.roles.unassign": "Nuimti",
+	"admin.roles.permissions.name": "Pavadinimas"
 }

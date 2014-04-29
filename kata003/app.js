@@ -23,7 +23,7 @@ var models = {
 };
 
 var permissions = require('./common/permissions');
-var authorizationRoutes = require('./routes/authorization-routes')(express, permissions);
+var authorizationRoutes = require('./routes/authorization-routes')(express, permissions, models, crypto);
 var localizationRoutes = require('./routes/localization-routes')(express);
 var webRoutes = require('./routes/web-routes')(express, authorization);
 var adminRoutes = require('./routes/admin-routes')(express, authorization, permissions, models);

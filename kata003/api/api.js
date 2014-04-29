@@ -37,58 +37,71 @@ module.exports = function(express, authorization, permissions, models){
     });
 
     apiRouter.get('/statistics', function (req, res) {
-        models.customerModel.Customer.findOne(function (err, customer) {
-            models.ratingModel.Rating.find({ c: customer.c }, function (err, ratings) {
-                var statistics = ratings.map(function (rating) {
+        models.userModel.User.findOne({email: req.session.user.email}, function (err, user) {
+            models.customerModel.Customer.find({_id: {$in: user.customers}}, function (err, customers) {
 
-                    var newDepartment = {};
-                    var newObject = {};
-                    var newRating = {};
+                var cs = customers.map(function(customer){
+                    return customer.c;
+                });
 
-                    customer.departments.filter(function (item) {
-                        return item.d === rating.d
-                    }).forEach(function (item) {
-                            newDepartment = item;
-                            item.objects.filter(function (item) {
-                                return item.o === rating.o;
+                models.ratingModel.Rating.find({c: {$in: cs}}, function (err, ratings) {
+                    var statistics = ratings.map(function (rating) {
+
+                        var newCustomer = {};
+                        var newDepartment = {};
+                        var newObject = {};
+                        var newRating = {};
+
+                        customers.filter(function (item) {
+                            return item.c === rating.c
+                        }).forEach(function (item) {
+                            newCustomer = item,
+                            item.departments.filter(function (item) {
+                                return item.d === rating.d
                             }).forEach(function (item) {
+                                newDepartment = item;
+                                item.objects.filter(function (item) {
+                                    return item.o === rating.o;
+                                }).forEach(function (item) {
                                     newObject = item;
                                     item.ratingTypes.filter(function (item) {
                                         return item.r === rating.r;
                                     }).forEach(function(item){
-                                            newRating = item
-                                        });
+                                        newRating = item
+                                    });
                                 });
+                            });
                         });
 
+                        return {
+                            customer: {
+                                c: newCustomer.c,
+                                name: newCustomer.name,
+                                code: newCustomer.code,
+                                address: newCustomer.address
+                            },
+                            department: {
+                                d: newDepartment.d,
+                                name: newDepartment.name,
+                                code: newDepartment.code,
+                                address: newDepartment.address
+                            },
+                            object: {
+                                o: newObject.o,
+                                name: newObject.name
+                            },
+                            rating: {
+                                r: newRating.r,
+                                name: newRating.name
+                            }
+                        };
 
-                    return {
-                        customer: {
-                            c: customer.c,
-                            name: customer.name,
-                            code: customer.code,
-                            address: customer.address
-                        },
-                        department: {
-                            d: newDepartment.d,
-                            name: newDepartment.name,
-                            code: newDepartment.code,
-                            address: newDepartment.address
-                        },
-                        object: {
-                            o: newObject.o,
-                            name: newObject.name
-                        },
-                        rating: {
-                            r: newRating.r,
-                            name: newRating.name
-                        }
-                    };
-
+                    });
+                    res.send(statistics);
                 });
-                res.send(statistics);
             });
         });
+
     });
 
     apiRouter.get('/ratings', function (req, res) {
