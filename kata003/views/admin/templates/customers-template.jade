@@ -1,29 +1,29 @@
-h1.page-header= __('admin.index.navigation.customers')
+h1.page-header= __('admin.customers.title')
 .row
     .col-md-5
         button.btn.btn-default(ng-click='onAdd()') Add
         form(role='form', method='post', action='admin/users/')
             .form-group
-                label(for='c')= __('admin.users.editCustomerForm.input.c')
-                input#c.form-control(type='number', placeholder="#{__('admin.users.editCustomerForm.input.c')}", name='c', ng-model='customer.c')
+                label(for='c')= __('admin.customers.c')
+                input#c.form-control(type='number', placeholder="#{__('admin.customers.c')}", name='c', ng-model='customer.c')
             .form-group
-                label(for='name')= __('admin.users.editCustomerForm.input.name')
-                input#name.form-control(type='text', placeholder="#{__('admin.users.editCustomerForm.input.name')}", name='name', ng-model='customer.name')
+                label(for='name')= __('admin.customers.name')
+                input#name.form-control(type='text', placeholder="#{__('admin.customers.name')}", name='name', ng-model='customer.name')
             .form-group
-                label(for='code')= __('admin.users.editCustomerForm.input.code')
-                input#code.form-control(type='text', placeholder="#{__('admin.users.editCustomerForm.input.code')}", name='code', ng-model='customer.code')
+                label(for='code')= __('admin.customers.code')
+                input#code.form-control(type='text', placeholder="#{__('admin.customers.code')}", name='code', ng-model='customer.code')
             .form-group
-                label(for='address')= __('admin.users.editCustomerForm.input.address')
-                input#address.form-control(type='text', placeholder="#{__('admin.users.editCustomerForm.input.address')}", name='email', ng-model='customer.address')
-        button.btn.btn-default(ng-click='onSave(customer)')= __('admin.users.editCustomerForm.input.submit')
+                label(for='address')= __('admin.customers.address')
+                input#address.form-control(type='text', placeholder="#{__('admin.customers.address')}", name='email', ng-model='customer.address')
+        button.btn.btn-default(ng-click='onSave(customer)')= __('admin.customers.submit')
     .col-md-7
         table.table(ng-table='ng')
             thead
                 tr
-                    th= __('admin.users.editCustomerForm.input.c')
-                    th= __('admin.users.editCustomerForm.input.name')
-                    th= __('admin.users.editCustomerForm.input.code')
-                    th= __('admin.users.editCustomerForm.input.address')
+                    th= __('admin.customers.c')
+                    th= __('admin.customers.name')
+                    th= __('admin.customers.code')
+                    th= __('admin.customers.address')
                     th
             tbody
                 tr(ng-repeat='customer in customers')

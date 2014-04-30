@@ -18,6 +18,7 @@ block scripts
     script(src='/vendor/angular/angular.js')
     script(src='/vendor/angular-route/angular-route.js')
     script(src='/vendor/angular-resource/angular-resource.js')
+    script(src='/vendor/ng-table/ng-table.js')
     script(src='/vendor/ng-file-upload/angular-file-upload.js')
     script(src='/admin/app.js')
     script(src='/admin/controllers/admin-controller.js')
@@ -45,7 +46,7 @@ block global
                 {title: "#{__('admin.index.navigation.overview')}", url: '/admin', active: 'active'}, 
                 {title: "#{__('admin.users.title')}", url: '/admin/users'},
                 {title: "#{__('admin.roles.title')}", url: '/admin/roles'},
-                {title: "#{__('admin.index.navigation.customers')}", url: '/admin/customers'},
+                {title: "#{__('admin.customers.title')}", url: '/admin/customers'},
                 {title: "#{__('admin.index.navigation.statistics')}", url: '/admin/statistics'},
                 {title: "#{__('admin.index.navigation.import.ratings')}", url: '/admin/import/ratings'},
                 {title: "#{__('admin.index.navigation.logout')}", url: '/admin/logout'}
