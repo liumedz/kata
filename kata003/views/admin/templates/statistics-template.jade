@@ -1,6 +1,8 @@
 h1.page-header= __('admin.index.navigation.statistics')
 .row
-    table.table(ng-table='ng')
+    smart-table(table-columns='columns', table-rows='rows')
+.row
+    table.table
         thead
             tr
                 th= __('admin.statistics.customer.c')

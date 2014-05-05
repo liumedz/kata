@@ -44,6 +44,12 @@ module.exports = function(express, authorization, permissions, models){
                     return customer.c;
                 });
 
+                if(req.query.c){
+                    cs = cs.filter(function(item){
+                        return item === parseInt(req.query.c);
+                    });
+                }
+
                 models.ratingModel.Rating.find({c: {$in: cs}}, function (err, ratings) {
                     var statistics = ratings.map(function (rating) {
 
