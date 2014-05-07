@@ -2,56 +2,109 @@ commonControls.directive('smartTable', function(){
     return {
         restrict: 'E',
         scope:{
-            tableColumns: '=',
-            tableRows: '='
+            tableDataSource: '='
         },
-        template: '<table class="table"><thead><tr><th ng-repeat="column in tableColumns">{{column.name}} </br> <dropdown-multiselect pre-selected="member.checkItems" model="selected_items" options="column.checkItems"></dropdown-multiselect></th></tr></thead><tbody><tr ng-repeat="row in tableRows"><td ng-repeat="cell in row.cells">{{cell}}</td></tr></tbody> </table>',
+        template: '<table class="table"><thead><tr><th ng-repeat="column in tableColumns">{{column.title}} </br> <dropdown-multiselect on-checked="onChecked" pre-selected="column.checkedItems" model="column.selectedItems" options="column.checkItems"></dropdown-multiselect></th></tr></thead><tbody><tr ng-repeat="row in tableRows"><td ng-repeat="cell in row.cells track by $index">{{cell}}</td></tr></tbody> </table>',
         controller: function($scope){
 
-            $scope.member = {checkItems: []};
-            $scope.selected_items = [];
+            var tableData = null;
 
-            $scope.tableColumns = $scope.tableColumns.map(function(columnItem){
+            $scope.tableDataSource.then(function(data){
 
-                var distinctColumnCells = [];
-                var i = 0;
-                $scope.tableRows.forEach(function(rowItem){
-                    var filtered = distinctColumnCells.filter(function(item){
-                        return item.name === rowItem[columnItem.name];
+                tableData = data;
+
+                $scope.tableColumns = data.columns.map(function(columnItem){
+
+                    var distinctColumnCells = [];
+                    var i = 0;
+                    data.rows.forEach(function(rowItem){
+                        var filtered = distinctColumnCells.filter(function(item){
+                            return item.name === rowItem[columnItem.name];
+                        });
+
+                        if(filtered.length === 0){
+                            i++;
+                            distinctColumnCells.push({
+                                id: i,
+                                name: rowItem[columnItem.name]
+                            })
+                        }
+
                     });
 
-                    if(filtered.length === 0){
-                        i++;
-                        distinctColumnCells.push({
-                            id: i,
-                            name: rowItem[columnItem.name]
-                        })
+                    columnItem.checkItems = distinctColumnCells;
+                    columnItem.checkedItems = [];
+                    columnItem.selectedItems = [];
+
+                    return columnItem;
+
+                });
+
+
+                $scope.tableRows = data.rows.map(function(rowItem){
+
+                    var cells = [];
+
+                    data.columns.forEach(function(columnItem){
+                        cells.push(rowItem[columnItem.name]);
+                    });
+
+                    return {
+                        row: rowItem,
+                        cells: cells
                     }
-
                 });
-
-                columnItem.checkItems = distinctColumnCells;
-
-                return columnItem;
 
             });
 
+            $scope.onChecked = function(){
+                var rows = tableData.rows.map(function(rowItem){
 
+                    var cells = [];
 
-            $scope.tableRows = $scope.tableRows.map(function(rowItem){
+                    tableData.columns.forEach(function(columnItem){
 
-                var cells = [];
+                        var item = rowItem[columnItem.name];
+                        cells.push(item);
 
-                $scope.tableColumns.forEach(function(columnItem){
-                    cells.push(rowItem[columnItem.name]);
+                    });
+
+                    return {
+                        row: rowItem,
+                        cells: cells
+                    }
                 });
 
-                return {
-                    row: rowItem,
-                    cells: cells
-                }
-            });
+                $scope.tableRows = rows.filter(function(rowData){
 
+                    var result = false;
+
+                    tableData.columns.forEach(function(columnItem){
+
+                        var row = rowData.row[columnItem.name];
+
+                        var checkedItems = columnItem.selectedItems.filter(function(selectedItem){
+
+                            var checkItems = columnItem.checkItems.filter(function(checkItem){
+                                return checkItem.id === selectedItem;
+                            });
+
+                            var filtered = checkItems.filter(function(checkItem){
+                                return checkItem.name === row;
+                            });
+
+                            return filtered.length > 0;
+                        });
+
+                        if(checkedItems.length > 0){
+                            result = true;
+                            return;
+                        }
+                    });
+
+                    return result;
+                });
+            }
         }
     }
 });

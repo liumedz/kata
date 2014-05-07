@@ -4,7 +4,8 @@ commonControls.directive('dropdownMultiselect', function(){
         scope:{
             model: '=',
             options: '=',
-            pre_selected: '=preSelected'
+            pre_selected: '=preSelected',
+            onChecked: '='
         },
         template: "<div class='btn-group' data-ng-class='{open: open}'>"+
             "<button class='btn btn-small'>Select</button>"+
@@ -26,11 +27,11 @@ commonControls.directive('dropdownMultiselect', function(){
 
             $scope.selectAll = function () {
                 $scope.model = _.pluck($scope.options, 'id');
-                console.log($scope.model);
+                $scope.onChecked();
             };
             $scope.deselectAll = function() {
                 $scope.model=[];
-                console.log($scope.model);
+                $scope.onChecked();
             };
             $scope.setSelectedItem = function(){
                 var id = this.option.id;
@@ -39,7 +40,7 @@ commonControls.directive('dropdownMultiselect', function(){
                 } else {
                     $scope.model.push(id);
                 }
-                console.log($scope.model);
+                $scope.onChecked();
                 return false;
             };
             $scope.isChecked = function (id) {
