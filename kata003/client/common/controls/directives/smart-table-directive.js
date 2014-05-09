@@ -4,8 +4,8 @@ commonControls.directive('smartTable', function(){
         scope:{
             tableDataSource: '='
         },
-        template: '<table class="table"><thead><tr><th ng-repeat="column in tableColumns">{{column.title}} </br> <dropdown-multiselect on-checked="onChecked" pre-selected="column.checkedItems" model="column.selectedItems" options="column.checkItems"></dropdown-multiselect></th></tr></thead><tbody><tr ng-repeat="row in tableRows"><td ng-repeat="cell in row.cells track by $index">{{cell}}</td></tr></tbody> </table>',
-        controller: function($scope){
+        template: '<div><input ng-model="search.cells[1]"/><table class="table"><thead><tr><th ng-repeat="column in tableColumns">{{column.title}} </br> <dropdown-multiselect on-checked="onChecked" model="column.checkedItems" options="column.checkItems"></dropdown-multiselect></th></tr></thead><tbody><tr ng-repeat="row in tableRows | filter:search:strict"><td ng-repeat="cell in row.cells track by $index">{{cell}}</td></tr></tbody> </table></div>',
+        controller: function($scope, $filter){
 
             var tableData = null;
 
@@ -34,7 +34,6 @@ commonControls.directive('smartTable', function(){
 
                     columnItem.checkItems = distinctColumnCells;
                     columnItem.checkedItems = [];
-                    columnItem.selectedItems = [];
 
                     return columnItem;
 
@@ -58,15 +57,14 @@ commonControls.directive('smartTable', function(){
             });
 
             $scope.onChecked = function(){
+
                 var rows = tableData.rows.map(function(rowItem){
 
                     var cells = [];
 
                     tableData.columns.forEach(function(columnItem){
-
                         var item = rowItem[columnItem.name];
                         cells.push(item);
-
                     });
 
                     return {
@@ -83,7 +81,7 @@ commonControls.directive('smartTable', function(){
 
                         var row = rowData.row[columnItem.name];
 
-                        var checkedItems = columnItem.selectedItems.filter(function(selectedItem){
+                        var checkedItems = columnItem.checkedItems.filter(function(selectedItem){
 
                             var checkItems = columnItem.checkItems.filter(function(checkItem){
                                 return checkItem.id === selectedItem;
@@ -101,7 +99,6 @@ commonControls.directive('smartTable', function(){
                             return;
                         }
                     });
-
                     return result;
                 });
             }
