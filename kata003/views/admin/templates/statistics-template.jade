@@ -1,34 +1,3 @@
 h1.page-header= __('admin.index.navigation.statistics')
 .row
     smart-table(table-data-source='dataSource')
-.row
-    table.table
-        thead
-            tr
-                th= __('admin.statistics.customer.c')
-                th= __('admin.statistics.customer.name')
-                th= __('admin.statistics.customer.code')
-                th= __('admin.statistics.customer.address')
-                th= __('admin.statistics.department.d')
-                th= __('admin.statistics.department.name')
-                th= __('admin.statistics.department.code')
-                th= __('admin.statistics.department.address')
-                th= __('admin.statistics.object.o')
-                th= __('admin.statistics.object.name')
-                th= __('admin.statistics.ratingType.r')
-                th= __('admin.statistics.ratingType.name')
-        tbody
-            tr(ng-repeat='statistic in statistics')
-                td {{statistic.customer.c}}
-                td {{statistic.customer.name}}
-                td {{statistic.customer.code}}
-                td {{statistic.customer.address}}
-                td {{statistic.department.d}}
-                td {{statistic.department.name}}
-                td {{statistic.department.code}}
-                td {{statistic.department.address}}
-                td {{statistic.object.o}}
-                td {{statistic.object.name}}
-                td {{statistic.rating.r}}
-                td {{statistic.rating.name}}
-

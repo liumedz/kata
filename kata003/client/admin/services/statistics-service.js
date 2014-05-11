@@ -6,17 +6,18 @@ app.factory('statisticsService', ['$q', 'statisticsResource', function($q, stati
 
     statisticsResource.query({}, function(data){
 
-        var columns  = [  {name: 'c', title: 'C'},
-            {name: 'customerName', title: 'Customer'},
-            {name: 'customerCode', title: 'Customer Code'},
-            {name: 'customerAddress', title: 'Address'},
-            {name: 'd', title: 'D'},
-            {name: 'departmentName', title: 'Department Name'},
-            {name: 'departmentCode', title: 'Department Code'},
-            {name: 'o', title: 'O'},
-            {name: 'objectName', title: 'Object Name'},
-            {name: 'r', title: 'R'},
-            {name: 'ratingName', title: 'Rating name'}
+        var columns  = [
+   //         {name: 'c', title: global.statisticsTableColumns.c},
+            {name: 'customerName', title: global.statisticsTableColumns.customerName},
+            {name: 'customerCode', title: global.statisticsTableColumns.customerCode},
+            {name: 'customerAddress', title: global.statisticsTableColumns.customerAddress},
+    //        {name: 'd', title: global.statisticsTableColumns.d},
+            {name: 'departmentName', title: global.statisticsTableColumns.departmentName},
+            {name: 'departmentCode', title: global.statisticsTableColumns.departmentCode},
+     //       {name: 'o', title: global.statisticsTableColumns.o},
+            {name: 'objectName', title: global.statisticsTableColumns.objectName},
+    //        {name: 'r', title: global.statisticsTableColumns.r},
+            {name: 'ratingName', title: global.statisticsTableColumns.ratingTypeName}
         ];
 
         var statistics = data.map(function(item){
