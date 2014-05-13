@@ -22,7 +22,16 @@ var models = {
     roleModel: require('./models/role')(mongoose)
 };
 
+
+var userSeeder = require('./seeders/user')(models, crypto);
+userSeeder.start();
+
 var permissions = require('./common/permissions');
+
+var roleSeeder = require('./seeders/role')(models, permissions);
+roleSeeder.start();
+
+
 var authorizationRoutes = require('./routes/authorization-routes')(express, permissions, models, crypto);
 var localizationRoutes = require('./routes/localization-routes')(express);
 var webRoutes = require('./routes/web-routes')(express, authorization);

@@ -16,8 +16,8 @@ module.exports = function(express, clames, models, crypto){
         models.userModel.User.findOne({email: req.body.email, password: shaSum.digest('hex')}).populate('roles').exec(function (err, user) {
             req.session.user = {
                 email: user.email,
-                roles: user.roles.map(function(item){return item.name}),
-            }
+                roles: user.roles.map(function (item) { return item.name }),
+            };
 
             req.session.user.permissions = [];
 
