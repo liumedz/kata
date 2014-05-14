@@ -4,7 +4,8 @@ commonControls.directive('dropdownMultiselect', function(){
         scope:{
             model: '=',
             options: '=',
-            onChecked: '='
+            onChecked: '=',
+            name: '='
         },
         template: "<div class='btn-group' data-ng-class='{open: open}'>"+
             "<button class='btn btn-small'>Select</button>"+
@@ -13,41 +14,39 @@ commonControls.directive('dropdownMultiselect', function(){
             "<li><a data-ng-click='selectAll()'><i class='icon-ok-sign'></i>  Check All</a></li>" +
             "<li><a data-ng-click='deselectAll();'><i class='icon-remove-sign'></i>  Uncheck All</a></li>" +
             "<li class='divider'></li>" +
-            "<li data-ng-repeat='option in options'> <a data-ng-click='setSelectedItem()'>{{option.name}}<span data-ng-class='isChecked(option.id)'></span></a></li>" +
+            "<li data-ng-repeat='option in options'> <a data-ng-click='setSelectedItem(option)'>{{option.name}}<span data-ng-class='isChecked(option)'></span></a></li>" +
             "</ul>" +
             "</div>" ,
         controller: function($scope){
 
             $scope.selectAll = function () {
                  $scope.options.forEach(function(item){
-                     $scope.model.push(item.id);
+                     $scope.model.push(item);
                 });
-                $scope.onChecked();
+                $scope.onChecked($scope);
             };
 
             $scope.deselectAll = function() {
-                $scope.model.splice(0, $scope.model.length)
-                $scope.onChecked();
+                $scope.model.splice(0, $scope.model.length);
+                $scope.onChecked($scope);
             };
 
-            $scope.setSelectedItem = function(){
-                var id = this.option.id;
-                var filtered = $scope.model.filter(function(item){
-                    return item === id;
-                });
-                if(filtered.length > 0){
-                    var index = $scope.model.indexOf(id);
+            $scope.setSelectedItem = function(option){
+
+                var index = $scope.model.indexOf(option);
+
+                if(index > -1){
                     $scope.model.splice(index, 1);
                 }
                 else{
-                    $scope.model.push(id);
+                    $scope.model.push(option);
                 }
-                $scope.onChecked();
+                $scope.onChecked($scope);
                 return false;
             };
 
-            $scope.isChecked = function (id) {
-                if ($scope.model.indexOf(id) > -1) {
+            $scope.isChecked = function (option) {
+                if ($scope.model.indexOf(option) > -1) {
                     return 'glyphicon glyphicon-ok';
                 }
                 return false;

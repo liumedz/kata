@@ -4,10 +4,11 @@ commonControls.directive('smartTable', function(){
         scope:{
             tableDataSource: '='
         },
-        template: '<div><table class="table"><thead><tr><th ng-repeat="column in tableColumns">{{column.title}} </br> <dropdown-multiselect on-checked="onChecked" model="column.checkedItems" options="column.checkItems"></dropdown-multiselect></th></tr></thead><tbody><tr ng-repeat="row in tableRows | filter:search:strict"><td ng-repeat="cell in row.cells track by $index">{{cell}}</td></tr></tbody> </table></div>',
+        template: '<div><table class="table"><thead><tr><th ng-repeat="column in tableColumns">{{column.title}} </br> <dropdown-multiselect name="column.name" on-checked="onChecked" model="column.checkedItems" options="column.checkItems"></dropdown-multiselect></th></tr></thead><tbody><tr ng-repeat="row in tableRows | filter:search:strict"><td ng-repeat="cell in row.cells track by $index">{{cell}}</td></tr></tbody> </table></div>',
         controller: function($scope, $filter){
 
             var tableData = null;
+            var fiterOrder = [];
 
             $scope.tableDataSource.then(function(data){
                 tableData = data;
@@ -15,14 +16,12 @@ commonControls.directive('smartTable', function(){
                 fillRows(tableData);
             });
 
-            $scope.onChecked = function(){
+            $scope.onChecked = function(sender){
                 fillRows(tableData);
-                filterRows();
+                filter(sender);
             }
 
-            var fillColumns = function(data){
-                tableData = data;
-
+            var fillColumns = function(tableData){
                 $scope.tableColumns = tableData.columns.map(function(columnItem){
 
                     var distinctColumnCells = [];
@@ -39,14 +38,10 @@ commonControls.directive('smartTable', function(){
                                 name: rowItem[columnItem.name]
                             })
                         }
-
                     });
-
                     columnItem.checkItems = distinctColumnCells;
                     columnItem.checkedItems = [];
-
                     return columnItem;
-
                 });
             };
 
@@ -66,33 +61,35 @@ commonControls.directive('smartTable', function(){
                 });
             };
 
-            var filterRows = function(){
-                var rows = $scope.tableRows;
-                tableData.columns.forEach(function(columnItem){
+            var filter = function(sender){
 
-                    var checkedItems = columnItem.checkedItems.map(function(checkedItem){
-                        return columnItem.checkItems.filter(function(checkItem){
-                            return checkItem.id === checkedItem;
-                        })[0];
-                    });
-
-                    if(checkedItems.length !== 0){
-                        var currentRows = [];
-                        checkedItems.forEach(function(checkedItem){
-                            var filteredRows = rows.filter(function(rowData){
-                                var cell = rowData.row[columnItem.name];
-                                if(cell === checkedItem.name){
-                                    return true;
-                                }
-                            });
-                            if(filteredRows.length > 0){
-                                currentRows = currentRows.concat(filteredRows);
-                            }
-                        });
-                        rows = currentRows;
+                $scope.tableColumns.forEach(function(tableColumn){
+                    if(sender.name === tableColumn.name){
+                        fiterOrder.push(tableColumn);
                     }
                 });
-                $scope.tableRows = rows;
+
+                var filteredRows = [];
+
+                $scope.tableRows.forEach(function(row){
+                    sender.model.forEach(function(checkedItem){
+                        if(row.row[sender.name] === checkedItem.name){
+                            filteredRows.push(row);
+
+                            for(var cellIndex = 0; cellIndex < row.cells.length; cellIndex++){
+                                var cell = row.cells[cellIndex];
+                                var column = $scope.tableColumns[cellIndex];
+                                var filteredCheckItems = column.checkItems.filter(function(checkItem){
+                                    return checkItem.name === cell;
+                                });
+                                if(filteredCheckItems.length === 0){
+                                    column.checkItems.push({name: cell});
+                                }
+                            }
+                        }
+                    });
+                });
+                $scope.tableRows = filteredRows;
             };
         }
     }
