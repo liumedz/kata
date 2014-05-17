@@ -4,7 +4,8 @@ commonControls.directive('smartTable', function(){
         scope:{
             tableDataSource: '='
         },
-        template: '<div><div><ul class="list-inline"><li ng-repeat="filter in filters track by $index"> {{filter.name}} <ul><li ng-repeat="checkedItem in filter.checkedItems">{{checkedItem.name}}</li> </ul></li></ul></div> <table class="table"><thead><tr><th ng-repeat="column in tableColumns">{{column.title}} </br> <dropdown-multiselect caption="column.title" name="column.name" on-checked="onChecked" model="column.checkedItems" options="column.checkItems"></dropdown-multiselect></th></tr></thead><tbody><tr ng-repeat="row in tableRows | filter:search:strict" class="{{row.visibility}}"><td ng-repeat="cell in row.cells track by $index">{{cell}}</td></tr></tbody> </table></div>',
+        template: '<div><div><ul class="list-inline"><li ng-repeat="filter in filters track by $index"> {{filter.name}} <a href="#" data-ng-click="clearFilter(filter)">CLS</a> <ul><li ng-repeat="checkedItem in filter.checkedItems">{{checkedItem.name}}</li> </ul></li></ul></div> <table class="table"><thead><tr><th ng-repeat="column in tableColumns">{{column.title}} </br> <dropdown-multiselect caption="column.title" name="column.name" on-checked="onChecked" model="column.checkedItems" options="column.checkItems"></dropdown-multiselect></th></tr></thead><tbody><tr ng-repeat="row in tableRows | filter:search:strict" class="{{row.visibility}}"><td ng-repeat="cell in row.cells track by $index">{{cell}}</td></tr></tbody> </table></div>',
+
         controller: function($scope, $filter){
 
             var tableData = null;
@@ -65,18 +66,6 @@ commonControls.directive('smartTable', function(){
                 return column;
             }
 
-            var setRowFilterItemVisibility = function(row, currentColumn, visibility){
-                tableData.columns.forEach(function(column){
-                    if(column.name != currentColumn.name){
-                        column.checkItems.forEach(function(checkItem){
-                            if(checkItem.name === row[column.name]){
-                                checkItem.visibility = visibility;
-                            }
-                        });
-                    }
-                });
-            }
-
             var updateFilter = function(currentColumn){
                 var columnFilter = angular.copy(currentColumn);
 
@@ -103,7 +92,7 @@ commonControls.directive('smartTable', function(){
                         }
                         var show = false;
                         column.checkedItems.forEach(function (checkedItem) {
-                            if (checkedItem.name === row[column.name]) {
+                            if (checkedItem && checkedItem.name === row[column.name]) {
                                 show = true;
                             }
                         });
@@ -117,7 +106,7 @@ commonControls.directive('smartTable', function(){
                 });
             }
 
-            var filter = function (sender, isChecked) {
+            var filter = function (sender) {
                 var currentColumn = getColumn(sender);
                 updateFilter(currentColumn);
                 filterRows();
@@ -139,8 +128,43 @@ commonControls.directive('smartTable', function(){
                 fill();
             });
 
-            $scope.onChecked = function(sender, isChecked){
-                filter(sender, isChecked);
+            $scope.clearFilter = function(column){
+                var index = $scope.filters.indexOf(column);
+                var currentColumn = null;
+                if(index - 1 > -1){
+                    currentColumn = $scope.filters[index - 1];
+
+                    if(currentColumn !== null){
+                        for(var i = 0; i < tableData.columns.length; i++){
+                            var column = tableData.columns[i];
+                            if(column.name === currentColumn.name){
+                                column.checkItems = $scope.filters[index - 1].checkItems;
+                            }
+                        }
+                    }
+                }
+                $scope.filters.splice(index, 1);
+
+
+
+                filterRows();
+                if(currentColumn !== null){
+                    tableData.columns.forEach(function(column){
+                        if(column.name !== currentColumn.name){
+                            column.checkItems = [];
+                            column.checkedItems = [];
+                            tableData.rows.forEach(function(row){
+                                if(row.visibility !== 'collapse'){
+                                    fillFilters(row, column);
+                                }
+                            });
+                        }
+                    });
+                }
+            };
+
+            $scope.onChecked = function(sender){
+                filter(sender);
             };
         }
     }
