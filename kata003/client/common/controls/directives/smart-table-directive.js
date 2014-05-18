@@ -4,31 +4,52 @@ commonControls.directive('smartTable', function(){
         scope:{
             tableDataSource: '='
         },
-        template: '<div><div><ul class="list-inline"><li ng-repeat="filter in filters track by $index"> {{filter.title}} <a href="#" data-ng-click="clearFilter(filter)">CLS</a> </li></ul></div> <table class="table"><thead><tr><th ng-repeat="column in tableColumns">{{column.title}} </br> <dropdown-multiselect caption="column.title" name="column.name" on-checked="onChecked" model="column.checkedItems" options="column.checkItems"></dropdown-multiselect></th></tr></thead><tbody><tr ng-repeat="row in tableRows | filter:search:strict" class="{{row.visibility}}"><td ng-repeat="cell in row.cells track by $index">{{cell}}</td></tr></tbody> </table></div>',
-
+        template: ' <div> <div class="row"> <div class="col-lg-4"> <ul class="list-group"> <li class="list-group-item" data-ng-repeat="info in infos"> <span class="badge">{{info.value}}</span>{{info.name}}</li> </ul> </div> </div> <div class="row"> <div class="col-lg-4"> <ul class="breadcrumb"> <li data-ng-repeat="filter in filters track by $index"> {{filter.title}} <a data-ng-click="clearFilter(filter)" href="#">CLS</a></li> </ul> </div> </div> <div class="row"> <table class="table"> <thead> <tr data-ng-repeat="column in tableColumns"> <th>{{column.title}}<br> <dropdown-multiselect caption="column.title" name="column.name" on-checked="onChecked" model="column.checkedItems" options="column.checkItems"></dropdown-multiselect> </th> </tr> </thead> <tbody> <tr class="{{row.visibility}}" data-ng-repeat= "row in tableRows | filter:search:strict"> <td data-ng-repeat="cell in row.cells track by $index"> {{cell}}</td> </tr> </tbody> </table> </div> </div>',
         controller: function($scope, $filter){
 
             var tableData = null;
+            $scope.infos = [];
             $scope.filters = [];
 
             var fill = function(){
-
                 var rows = tableData.rows;
                 var columns = tableData.columns;
 
+                $scope.tableRows = [];
+                $scope.tableColumns = [];
+
+                columns.forEach(function(column){
+                    column.checkItems = [];
+                    column.checkedItems = [];
+                    rows.forEach(function(row){
+                        var newCheckItem = {id: column.checkItems.length, name: row[column.name]};
+                        var hasCheckItem = false;
+                        column.checkItems.forEach(function(checkItem){
+                            if(checkItem.name === newCheckItem.name){
+                                hasCheckItem = true;
+                                return;
+                            }
+                        });
+                        if(!hasCheckItem && newCheckItem.name){
+                            column.checkItems.push(newCheckItem);
+                            column.checkedItems.push(newCheckItem);
+                        }
+                    });
+                    if(column.checkItems.length > 1){
+                        $scope.tableColumns.push(column);
+                    }
+                    else{
+                        $scope.infos.push({name: column.title, value: column.checkItems[0].name});
+                    }
+                });
 
                 rows.forEach(function(row){
-                    columns.forEach(function(column){
-                        if(!row.cells){
-                            row.cells = [];
-                        }
+                    row.cells = [];
+                    $scope.tableColumns.forEach(function(column){
                         row.cells.push(row[column.name]);
-
-                        fillFilters(row, column);
                     });
+                    $scope.tableRows.push(row);
                 });
-                $scope.tableRows = rows;
-                $scope.tableColumns = columns;
             };
 
             var fillFilters = function(row, column){
@@ -51,8 +72,10 @@ commonControls.directive('smartTable', function(){
 
                 if(!hasCheckItem){
                     var checkItem = {id: column.checkItems.length, name: row[column.name]};
-                    column.checkItems.push(checkItem);
-                    column.checkedItems.push(checkItem);
+                    if(checkItem.name){
+                        column.checkItems.push(checkItem);
+                        column.checkedItems.push(checkItem);
+                    }
                 }
             }
 
