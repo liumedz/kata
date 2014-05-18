@@ -3,6 +3,7 @@ block styles
     // styles start
     link(rel='stylesheet', href='/vendor/bootstrap/dist/css/bootstrap.css')
     link(rel='stylesheet', href='/admin/css/style.css')
+    link(rel='stylesheet', href='/vendor/jqplot/jquery.jqplot.css')
     // styles end
 block content
     div(data-ng-app='app', ng-controller="adminController")
@@ -14,15 +15,20 @@ block content
 block scripts
     // scripts start
     script(src='/vendor/jquery/dist/jquery.js')
+    script(src='/vendor/jqplot/jquery.jqplot.js')
+    script(src='/vendor/jqplot/plugins/jqplot.donutRenderer.js')
+    script(src='/vendor/jqplot/plugins/jqplot.pieRenderer.js')
     script(src='/vendor/bootstrap/dist/js/bootstrap.js')
     script(src='/vendor/angular/angular.js')
     script(src='/vendor/angular-route/angular-route.js')
     script(src='/vendor/angular-resource/angular-resource.js')
     script(src='/vendor/ng-table/ng-table.js')
     script(src='/vendor/ng-file-upload/angular-file-upload.js')
+    script(src='/vendor/angular-ui-chart/src/chart.js')
     script(src='/common/controls/common-controls.js')
     script(src='/common/controls/directives/dropdown-multiselect-directive.js')
     script(src='/common/controls/directives/smart-table-directive.js')
+    script(src='/common/controls/directives/smart-table-head-directive.js')
     script(src='/admin/app.js')
     script(src='/admin/controllers/admin-controller.js')
     script(src='/admin/controllers/overview-controller.js')

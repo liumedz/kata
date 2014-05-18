@@ -1,0 +1,24 @@
+div
+    div.row
+        div.col-lg-8
+            smart-table-head(data-changed="dataChanged()")
+        div.col-lg-4
+            ul.list-group
+                li.list-group-item(data-ng-repeat='detail in details')
+                    span.badge {{detail.value}}
+                    | {{detail.name}}
+    div.row
+        div.col-lg-12
+            ul.breadcrumb
+                li(data-ng-repeat='filter in filters track by $index')
+                    | {{filter.title}}
+                    a.glyphicon.glyphicon-trash(data-ng-click='clearFilter(filter)', href='#')
+    div.row
+        table.table
+            thead
+                tr(data-ng-repeat='column in tableColumns')
+                    th
+                        dropdown-multiselect(caption='column.title', name='column.name', on-checked='onChecked', model='column.checkedItems', options='column.checkItems')
+            tbody
+                tr(data-ng-repeat='row in tableRows | filter:search:strict', class='{{row.visibility}}')
+                    td(data-ng-repeat='cell in row.cells track by $index')  {{cell}}

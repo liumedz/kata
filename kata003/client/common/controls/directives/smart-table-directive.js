@@ -1,14 +1,15 @@
 commonControls.directive('smartTable', function(){
     return {
         restrict: 'E',
+        replace: true,
         scope:{
             tableDataSource: '='
         },
-        template: ' <div> <div class="row"> <div class="col-lg-4"> <ul class="list-group"> <li class="list-group-item" data-ng-repeat="info in infos"> <span class="badge">{{info.value}}</span>{{info.name}}</li> </ul> </div> </div> <div class="row"> <div class="col-lg-4"> <ul class="breadcrumb"> <li data-ng-repeat="filter in filters track by $index"> {{filter.title}} <a data-ng-click="clearFilter(filter)" href="#">CLS</a></li> </ul> </div> </div> <div class="row"> <table class="table"> <thead> <tr data-ng-repeat="column in tableColumns"> <th>{{column.title}}<br> <dropdown-multiselect caption="column.title" name="column.name" on-checked="onChecked" model="column.checkedItems" options="column.checkItems"></dropdown-multiselect> </th> </tr> </thead> <tbody> <tr class="{{row.visibility}}" data-ng-repeat= "row in tableRows | filter:search:strict"> <td data-ng-repeat="cell in row.cells track by $index"> {{cell}}</td> </tr> </tbody> </table> </div> </div>',
+        templateUrl: 'smart-table-template.html',
         controller: function($scope, $filter){
 
             var tableData = null;
-            $scope.infos = [];
+            $scope.details = [];
             $scope.filters = [];
 
             var fill = function(){
@@ -17,6 +18,7 @@ commonControls.directive('smartTable', function(){
 
                 $scope.tableRows = [];
                 $scope.tableColumns = [];
+                $scope.details = [];
 
                 columns.forEach(function(column){
                     column.checkItems = [];
@@ -39,7 +41,7 @@ commonControls.directive('smartTable', function(){
                         $scope.tableColumns.push(column);
                     }
                     else{
-                        $scope.infos.push({name: column.title, value: column.checkItems[0].name});
+                        $scope.details.push({name: column.title, value: column.checkItems[0].name});
                     }
                 });
 
@@ -48,6 +50,7 @@ commonControls.directive('smartTable', function(){
                     $scope.tableColumns.forEach(function(column){
                         row.cells.push(row[column.name]);
                     });
+                    row.visibility = '';
                     $scope.tableRows.push(row);
                 });
             };
@@ -178,26 +181,17 @@ commonControls.directive('smartTable', function(){
                 if($scope.filters.length !== 0){
                     filter($scope.filters[$scope.filters.length - 1]);                }
                 else{
-                    tableData.columns.forEach(function(column){
-                        if(column.name === current.name){
-                            column.checkItems = current.checkItems;
-                            column.checkedItems = current.checkedItems.map(function(checkedItem){
-                                var item = null;
-                                current.checkItems.forEach(function(checkItem){
-                                    if(checkItem.name === checkedItem.name){
-                                        item = checkItem
-                                    }
-                                });
-                                return item;
-                            });
-                        }
-                    });
+                    fill();
                 }
             };
 
             $scope.onChecked = function (sender) {
                 filter(sender);
             };
+
+            this.add = function(){
+                alert('hi');
+            }
         }
     }
 });
