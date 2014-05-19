@@ -50,6 +50,7 @@ commonControls.directive('smartTable', function() {
                     row.visibility = '';
                     $scope.tableRows.push(row);
                 });
+                $scope.tableDataLoaded({ tableData: tableData });
             };
 
             var fillFilters = function(row, column) {
@@ -158,6 +159,7 @@ commonControls.directive('smartTable', function() {
                         });
                     }
                 });
+                $scope.tableDataLoaded({ tableData: tableData });
             };
 
             $scope.tableDataSource.then(function(data) {
@@ -168,9 +170,7 @@ commonControls.directive('smartTable', function() {
 
             $scope.clearFilter = function(column) {
                 var index = $scope.filters.indexOf(column);
-                var current = $scope.filters[index];
                 $scope.filters.splice(index, 1);
-
                 if ($scope.filters.length !== 0) {
                     filter($scope.filters[$scope.filters.length - 1]);
                 } else {
@@ -179,7 +179,7 @@ commonControls.directive('smartTable', function() {
             };
 
             $scope.onChecked = function(sender) {
-                filter(sender);
+                filter(sender);              
             };
         }
     };
