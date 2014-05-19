@@ -8,16 +8,7 @@ commonControls.directive('dropdownMultiselect', function(){
             name: '=',
             caption: '='
         },
-        template: "<div class='btn-group' data-ng-class='{open: open}'>"+
-            "<button class='btn btn-small'>{{caption}}</button>"+
-            "<button class='btn btn-small dropdown-toggle' data-ng-click='open=!open;'><span class='caret'></span></button>"+
-            "<ul class='dropdown-menu' aria-labelledby='dropdownMenu'>" +
-            "<li><a data-ng-click='selectAll()'><i class='icon-ok-sign'></i>  Check All</a></li>" +
-            "<li><a data-ng-click='deselectAll();'><i class='icon-remove-sign'></i>  Uncheck All</a></li>" +
-            "<li class='divider'></li>" +
-            "<li data-ng-repeat='option in options' class='{{option.visibility}}'> <a data-ng-click='setSelectedItem(option)'>{{option.name}}<span data-ng-class='isChecked(option)'></span></a></li>" +
-            "</ul>" +
-            "</div>" ,
+        templateUrl: "dropdown-multiselect-template.html",
         controller: function($scope){
 
             $scope.selectAll = function () {

@@ -16,8 +16,8 @@ div
     div.row
         table.table
             thead
-                tr(data-ng-repeat='column in tableColumns')
-                    th
+                tr
+                    th(data-ng-repeat='column in tableColumns')
                         dropdown-multiselect(caption='column.title', name='column.name', on-checked='onChecked', model='column.checkedItems', options='column.checkItems')
             tbody
                 tr(data-ng-repeat='row in tableRows | filter:search:strict', class='{{row.visibility}}')
