@@ -37,6 +37,14 @@ module.exports = function(express, authorization, permissions, models){
     });
 
     apiRouter.get('/statistics', function (req, res) {
+
+        if(!req.query.fromDate && !req.query.toDate){
+            res.send({error: 'Please set from and to dates'});
+            return;
+        }
+        var fromDate = req.query.fromDate;
+        var toDate = req.query.toDate;
+
         models.userModel.User.findOne({email: req.session.user.email}, function (err, user) {
             models.customerModel.Customer.find({_id: {$in: user.customers}}, function (err, customers) {
 
@@ -50,7 +58,13 @@ module.exports = function(express, authorization, permissions, models){
                     });
                 }
 
-                models.ratingModel.Rating.find({c: {$in: cs}}, function (err, ratings) {
+                models.ratingModel.Rating.find({c: {$in: cs},  created: {$gt:  fromDate}}, function (err, ratings) {
+
+                    if(!err){
+                        res.send({error: 'Error'});
+                        return;
+                    }
+
                     var statistics = ratings.map(function (rating) {
 
                         var newCustomer = {};

@@ -5,7 +5,15 @@ app.controller('statisticsController', ['$scope', '$location', '$q', '$timeout',
 
     $scope.dataSource = statisticsService.dataSource;
 
-    $scope.dateFilter = { fromDateTime: new Date() };
+    var now = new Date();
+    var firstDayPrevMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+
+    $scope.dateFilter = {
+        fromDate: firstDayPrevMonth,
+        toDate: now
+    };
+
+
 
     var pieChartOptions = {
         seriesDefaults: {
@@ -54,5 +62,11 @@ app.controller('statisticsController', ['$scope', '$location', '$q', '$timeout',
         });
         calculatePieCharData(tableData.rows, 'ratingName');
     };
+
+    $scope.load = function(){
+        statisticsService.load({fromDate: $scope.dateFilter.fromDate, toDate: $scope.dateFilter.toDate});
+    };
+
+    statisticsService.load({fromDate: $scope.dateFilter.fromDate, toDate: $scope.dateFilter.toDate});
 
 }]);
