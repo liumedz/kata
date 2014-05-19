@@ -1,3 +1,20 @@
 h1.page-header= __('admin.index.navigation.statistics')
 .row
-    smart-table(table-data-source='dataSource')
+    .col-lg-4 
+        div(ui-chart='someData', chart-options='myChartOpts')
+    .col-lg-4 
+        .form-group
+            label.col-lg-2.control-label(for='fromDateTime') From:
+            .col-lg-10
+                input#fromDateTime.form-control(placeholder='From:', type='date')
+        .form-group
+            label.col-lg-2.control-label(for='toDateTime') To:
+            .col-lg-10
+                input#toDateTime.form-control(placeholder='To:', type='date')
+    .col-lg-4
+        ul.list-group
+            li.list-group-item(data-ng-repeat='detail in details')
+                span.badge {{detail.value}}
+                | {{detail.name}}
+.row
+    smart-table(table-data-source='dataSource', table-data-loaded='tableDataLoaded(tableData)')

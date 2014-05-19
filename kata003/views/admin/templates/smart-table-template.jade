@@ -1,13 +1,5 @@
 div
     div.row
-        div.col-lg-8
-            smart-table-head(data-changed="dataChanged()")
-        div.col-lg-4
-            ul.list-group
-                li.list-group-item(data-ng-repeat='detail in details')
-                    span.badge {{detail.value}}
-                    | {{detail.name}}
-    div.row
         div.col-lg-12
             ul.breadcrumb
                 li(data-ng-repeat='filter in filters track by $index')
