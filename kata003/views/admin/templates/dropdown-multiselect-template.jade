@@ -14,5 +14,5 @@
         li.divider
         li(data-ng-repeat='option in options') {{option.visibility}}
           a(data-ng-click='setSelectedItem(option)')
-            | {{option.name}}
+            | {{option.name | date:'medium'}}
             span(data-ng-class='isChecked(option)')

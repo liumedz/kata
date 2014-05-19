@@ -20,11 +20,14 @@ block scripts
     script(src='/vendor/jqplot/plugins/jqplot.pieRenderer.js')
     script(src='/vendor/bootstrap/dist/js/bootstrap.js')
     script(src='/vendor/angular/angular.js')
+    script(src='/vendor/angular-i18n/angular-locale_en.js')
     script(src='/vendor/angular-route/angular-route.js')
     script(src='/vendor/angular-resource/angular-resource.js')
     script(src='/vendor/ng-table/ng-table.js')
     script(src='/vendor/ng-file-upload/angular-file-upload.js')
     script(src='/vendor/angular-ui-chart/src/chart.js')
+    script(src='/vendor/angular-bootstrap/ui-bootstrap.js')
+    script(src='/vendor/angular-bootstrap/ui-bootstrap-tpls.js')
     script(src='/common/controls/common-controls.js')
     script(src='/common/controls/directives/dropdown-multiselect-directive.js')
     script(src='/common/controls/directives/smart-table-directive.js')
@@ -73,6 +76,7 @@ block global
                    o: "#{__('admin.statistics.object.o')}",
                    objectName: "#{__('admin.statistics.object.name')}",
                    r: "#{__('admin.statistics.ratingType.r')}",
+                   created: "#{__('admin.statistics.rating.created')}",
                    ratingTypeName: "#{__('admin.statistics.ratingType.name')}"
                }
         };

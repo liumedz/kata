@@ -4,13 +4,18 @@ h1.page-header= __('admin.index.navigation.statistics')
         div(ui-chart='someData', chart-options='myChartOpts')
     .col-lg-4 
         .form-group
-            label.col-lg-2.control-label(for='fromDateTime') From:
+            label(class='col-lg-2 control-label' for='fromDateTime') From:
             .col-lg-10
-                input#fromDateTime.form-control(placeholder='From:', type='date')
+                input#fromDateTime.form-control(type='text', datepicker-popup='{{format}}', ng-model='dt', is-open='opened', min-date='minDate', max-date='2015-06-22', datepicker-options='dateOptions', date-disabled='disabled(date, mode)', ng-required='true', close-text='Close')
+                span(class='input-group-btn')
+                    button(class='btn btn-default', ng-click='open($event)')
+                        i(class='glyphicon glyphicon-calendar')
         .form-group
             label.col-lg-2.control-label(for='toDateTime') To:
             .col-lg-10
                 input#toDateTime.form-control(placeholder='To:', type='date')
+        .col-lg-10
+            button(class='btn', data-ng-click='load()') Load
     .col-lg-4
         ul.list-group
             li.list-group-item(data-ng-repeat='detail in details')

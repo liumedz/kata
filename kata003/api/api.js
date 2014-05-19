@@ -59,7 +59,7 @@ module.exports = function(express, authorization, permissions, models){
                         var newRating = {};
 
                         customers.filter(function (item) {
-                            return item.c === rating.c
+                            return item.c === rating.c;
                         }).forEach(function (item) {
                             newCustomer = item,
                             item.departments.filter(function (item) {
@@ -73,7 +73,7 @@ module.exports = function(express, authorization, permissions, models){
                                     item.ratingTypes.filter(function (item) {
                                         return item.r === rating.r;
                                     }).forEach(function(item){
-                                        newRating = item
+                                        newRating = item;
                                     });
                                 });
                             });
@@ -97,6 +97,7 @@ module.exports = function(express, authorization, permissions, models){
                                 name: newObject.name
                             },
                             rating: {
+                                created: rating.created,
                                 r: newRating.r,
                                 name: newRating.name
                             }

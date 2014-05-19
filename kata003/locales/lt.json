@@ -74,6 +74,7 @@
 	"admin.statistics.object.name": "Pavadinimas",
 	"admin.statistics.ratingType.r": "R",
 	"admin.statistics.ratingType.name": "Pavadinimas",
+	"admin.statistics.rating.created": "Sukurta",
 	"admin.statistics.submit": "Išsaugoti",
 	"admin.users.editDepartmentForm.input.d": "D",
 	"admin.users.editDepartmentForm.input.name": "Pavadinimas",

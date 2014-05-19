@@ -74,6 +74,7 @@
 	"admin.statistics.object.name": "Name",
 	"admin.statistics.ratingType.r": "R",
 	"admin.statistics.ratingType.name": "Ratting",
+	"admin.statistics.rating.created": "Created",
 	"admin.statistics.submit": "Save",
 	"admin.users.editDepartmentForm.input.d": "D",
 	"admin.users.editDepartmentForm.input.name": "Name",

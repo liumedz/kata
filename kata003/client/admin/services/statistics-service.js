@@ -17,6 +17,7 @@ app.factory('statisticsService', ['$q', 'statisticsResource', function($q, stati
      //       {name: 'o', title: global.statisticsTableColumns.o},
             {name: 'objectName', title: global.statisticsTableColumns.objectName},
     //        {name: 'r', title: global.statisticsTableColumns.r},
+            { name: 'created', title: global.statisticsTableColumns.created },
             {name: 'ratingName', title: global.statisticsTableColumns.ratingTypeName}
         ];
 
@@ -32,8 +33,9 @@ app.factory('statisticsService', ['$q', 'statisticsResource', function($q, stati
                 o: item.object.o,
                 objectName: item.object.name,
                 r: item.rating.r,
+                created: Date.parse(item.rating.created),
                 ratingName: item.rating.name
-            }
+            };
         });
 
         dataSourceDeferred.resolve({columns: columns, rows: statistics});

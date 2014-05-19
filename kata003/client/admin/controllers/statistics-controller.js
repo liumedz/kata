@@ -5,6 +5,8 @@ app.controller('statisticsController', ['$scope', '$location', '$q', '$timeout',
 
     $scope.dataSource = statisticsService.dataSource;
 
+    $scope.dateFilter = { fromDateTime: new Date() };
+
     var pieChartOptions = {
         seriesDefaults: {
             renderer: jQuery.jqplot.PieRenderer,
@@ -36,6 +38,9 @@ app.controller('statisticsController', ['$scope', '$location', '$q', '$timeout',
                 }
             }
         });
+        if ($scope.someData[0].length === 0) {
+            $scope.someData = [[['', 0]]];
+        }
     };
 
     $scope.myChartOpts = pieChartOptions;
