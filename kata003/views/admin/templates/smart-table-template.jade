@@ -13,4 +13,7 @@ div
                         dropdown-multiselect(caption='column.title', name='column.name', on-checked='onChecked', model='column.checkedItems', options='column.checkItems')
             tbody
                 tr(data-ng-repeat='row in tableRows | filter:search:strict', class='{{row.visibility}}')
-                    td(data-ng-repeat='cell in row.cells track by $index')  {{cell | date:'medium'}}
+                    td(data-ng-repeat='cell in row.cells track by $index')
+                        div(ng-switch on='cell.type')
+                            div(ng-switch-when="[object Date]") {{cell.value | date:'medium'}}
+                            div(ng-switch-default) {{cell.value}}

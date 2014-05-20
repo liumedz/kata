@@ -45,7 +45,7 @@ commonControls.directive('smartTable', function() {
                 rows.forEach(function(row) {
                     row.cells = [];
                     $scope.tableColumns.forEach(function(column) {
-                        row.cells.push(row[column.name]);
+                        row.cells.push({value: row[column.name], type: Object.prototype.toString.call(row[column.name]) });
                     });
                     row.visibility = '';
                     $scope.tableRows.push(row);
