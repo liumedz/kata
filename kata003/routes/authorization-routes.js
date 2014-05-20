@@ -7,16 +7,32 @@ module.exports = function(express, clames, models, crypto){
     });
 
     authorization.get('/login', function(req, res, next) {
-        res.render('authentication/login');
+        res.render('authentication/login', {error: ''});
     });
 
     authorization.post('/login', function(req, res, next) {
+
+        if(req.body.password === '' && req.body.email  === '' ){
+            res.render('authentication/login', {error: "Incorrect email or password!"});
+            return;
+        }
+
+        var email = req.body.email;
+        var password = req.body.password;
+
         var shaSum = crypto.createHash('sha256');
-        shaSum.update(req.body.password);
-        models.userModel.User.findOne({email: req.body.email, password: shaSum.digest('hex')}).populate('roles').exec(function (err, user) {
+        shaSum.update(password);
+
+        models.userModel.User.findOne({email: email, password: shaSum.digest('hex')}).populate('roles').exec(function (err, user) {
+
+            if(err !== null){
+                res.render('authentication/login', {error: "Incorrect email or password!"});
+                return;
+            }
+
             req.session.user = {
                 email: user.email,
-                roles: user.roles.map(function (item) { return item.name }),
+                roles: user.roles.map(function (item) { return item.name })
             };
 
             req.session.user.permissions = [];

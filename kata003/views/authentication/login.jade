@@ -5,18 +5,28 @@ block styles
     link(rel='stylesheet', href='/admin/css/style.css')
     // styles end
 block content
-    form(role='form', method='post')
-        .form-group
-            label(for='email') Email address
-            input#email.form-control(type='email', name='email', placeholder='Enter email')
-            .form-group
-                label(for='password') Password
-                input#password.form-control(type='password', name='password', placeholder='Password')
-            .checkbox
-                label
-                    input(type='checkbox')
-                    | Check me out
-            input.btn.btn-default(type='submit', text='Submit')
+    .row
+        .row
+            .col-lg-5
+            .col-lg-2
+                p #{error}
+            .col-lg-5
+        .col-lg-5
+        .col-lg-2
+            form(role='form', method='post')
+                .form-group
+                    label(for='email') Email address
+                    input#email.form-control(type='email', name='email', placeholder='Enter email')
+                    .form-group
+                        label(for='password') Password
+                        input#password.form-control(type='password', name='password', placeholder='Password')
+                    .checkbox
+                        label
+                            input(type='checkbox')
+                            | Check me out
+                    input.btn.btn-default(type='submit', text='Submit')
+        .col-lg-5
+
 block scripts
     // scripts start
     script(src='/vendor/jquery/dist/jquery.js')
