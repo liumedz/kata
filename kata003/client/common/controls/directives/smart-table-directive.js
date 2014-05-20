@@ -162,11 +162,21 @@ commonControls.directive('smartTable', function() {
                 $scope.tableDataLoaded({ tableData: tableData });
             };
 
-            $scope.tableDataSource.then(function(data) {
-                tableData = data;
-                fill();
-                $scope.tableDataLoaded({ tableData: tableData});
+            $scope.$watch('tableDataSource.dataSourceDeferred', function() {
+                if($scope.tableDataSource.dataSourceDeferred.promise){
+                    $scope.tableDataSource.dataSourceDeferred.promise.then(function(data) {
+                        tableData = data;
+                        fill();
+                        $scope.tableDataLoaded({ tableData: tableData});
+                    });
+                }
             });
+
+//            $scope.tableDataSource.promise.then(function(data) {
+//                tableData = data;
+//                fill();
+//                $scope.tableDataLoaded({ tableData: tableData});
+//            });
 
             $scope.clearFilter = function(column) {
                 var index = $scope.filters.indexOf(column);

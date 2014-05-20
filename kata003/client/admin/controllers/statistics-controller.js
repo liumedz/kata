@@ -13,8 +13,6 @@ app.controller('statisticsController', ['$scope', '$location', '$q', '$timeout',
         toDate: now
     };
 
-
-
     var pieChartOptions = {
         seriesDefaults: {
             renderer: jQuery.jqplot.PieRenderer,
@@ -64,9 +62,11 @@ app.controller('statisticsController', ['$scope', '$location', '$q', '$timeout',
     };
 
     $scope.load = function(){
-        statisticsService.load({fromDate: $scope.dateFilter.fromDate, toDate: $scope.dateFilter.toDate});
+        $scope.dataSource = statisticsService.dataSource;
+        statisticsService.load({fromDate: $scope.dateFilter.fromDate.toISOString(), toDate: $scope.dateFilter.toDate.toISOString()});
     };
 
-    statisticsService.load({fromDate: $scope.dateFilter.fromDate, toDate: $scope.dateFilter.toDate});
+
+    $scope.load()
 
 }]);

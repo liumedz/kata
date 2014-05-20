@@ -2,12 +2,13 @@
 
 app.factory('statisticsService', ['$q', 'statisticsResource', function($q, statisticsResource) {
 
-    var dataSourceDeferred = $q.defer();
+    var dataSource = {dataSourceDeferred: {}};
     var load = function(filter){
 
 
         statisticsResource.query(filter, function(data){
 
+            dataSource.dataSourceDeferred = $q.defer();
             var columns  = [
                 //         {name: 'c', title: global.statisticsTableColumns.c},
                 {name: 'customerName', title: global.statisticsTableColumns.customerName},
@@ -40,7 +41,8 @@ app.factory('statisticsService', ['$q', 'statisticsResource', function($q, stati
                 };
             });
 
-            dataSourceDeferred.resolve({columns: columns, rows: statistics});
+
+            dataSource.dataSourceDeferred.resolve({columns: columns, rows: statistics});
         });
     }
 
@@ -48,7 +50,7 @@ app.factory('statisticsService', ['$q', 'statisticsResource', function($q, stati
 
 
     return {
-        dataSource: dataSourceDeferred.promise,
+        dataSource: dataSource,
         load: load
     }
 

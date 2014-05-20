@@ -42,8 +42,8 @@ module.exports = function(express, authorization, permissions, models){
             res.send({error: 'Please set from and to dates'});
             return;
         }
-        var fromDate = req.query.fromDate;
-        var toDate = req.query.toDate;
+        var fromDate = new Date(req.query.fromDate);
+        var toDate = new Date(req.query.toDate);
 
         models.userModel.User.findOne({email: req.session.user.email}, function (err, user) {
             models.customerModel.Customer.find({_id: {$in: user.customers}}, function (err, customers) {
@@ -58,9 +58,9 @@ module.exports = function(express, authorization, permissions, models){
                     });
                 }
 
-                models.ratingModel.Rating.find({c: {$in: cs},  created: {$gt:  fromDate}}, function (err, ratings) {
+                models.ratingModel.Rating.find({c: {$in: cs},  created: {$gte: fromDate, $lt: toDate}}, function (err, ratings) {
 
-                    if(!err){
+                    if(err !== null){
                         res.send({error: 'Error'});
                         return;
                     }
