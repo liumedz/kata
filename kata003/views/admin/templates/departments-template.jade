@@ -41,6 +41,11 @@ h1.page-header= __('admin.index.navigation.departments')
                     td {{department.city}}
                     td {{department.address}}
                     td
-                        button.btn.btn-success(ng-click='onEdit(department)')  Edit
-                        button.btn.btn-success(ng-click='onObject(department)')  Objects
-                        button.btn.btn-success(ng-click='onDelete(department)')  Delete
+                        button.btn.btn-default.btn-sm(ng-click='onEdit(department)')
+                            span.glyphicon.glyphicon-edit Edit
+                        button.btn.btn-default.btn-sm(ng-click='onObject(department)')
+                            span.glyphicon.glyphicon-share Objects
+                        button.btn.btn-default.btn-sm(ng-click='onDelete(department)')
+                            span.glyphicon.glyphicon-remove Delete
+
+

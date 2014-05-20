@@ -22,7 +22,14 @@ h1.page-header= __('admin.index.navigation.objects')
                     td {{object.o}}
                     td {{object.name}}
                     td
-                        button.btn.btn-success(ng-click='onEdit(object)')  Edit
-                        button.btn.btn-success(ng-click='onDelete(object)')  Delete
-                        button.btn.btn-success(ng-click='clone(department, object)')  Clone
-                        button.btn.btn-success(ng-click='onRatingType(object)')  Rating Types
+                        button.btn.btn-default.btn-sm(ng-click='onEdit(object)')
+                            span.glyphicon.glyphicon-edit Edit
+                        button.btn.btn-default.btn-sm(ng-click='clone(department, object)')
+                            span.glyphicon.glyphicon-share Clone
+                        button.btn.btn-default.btn-sm(ng-click='onRatingType(object)')
+                            span.glyphicon.glyphicon-share Rating Types
+                        button.btn.btn-default.btn-sm(ng-click='onDelete(object)')
+                            span.glyphicon.glyphicon-remove Delete
+
+
+

@@ -33,8 +33,10 @@ h1.page-header= __('admin.users.title')
                     td {{user.firstName}}
                     td {{user.lastName}}
                     td
-                        button.btn.btn-success(ng-click='onEdit(user)')=  __('admin.users.edit')
-                        button.btn.btn-success(ng-click='onDelete(user)')=  __('admin.users.delete')
+                        button.btn.btn-default.btn-sm(ng-click='onEdit(user)')
+                            span.glyphicon.glyphicon-edit= __('admin.users.edit')
+                        button.btn.btn-default.btn-sm(ng-click='onDelete(user)')
+                            span.glyphicon.glyphicon-remove= __('admin.users.delete')
 
         table.table(ng-table='ng')
             thead
@@ -51,9 +53,9 @@ h1.page-header= __('admin.users.title')
                     td
                         div(ng-switch on="isAssigned(customer)")
                             div(ng-switch-when="false")
-                                button.btn.btn-success(ng-click='onAssign(customer)')= __('admin.users.customers.assign')
+                                button.btn.btn-default.btn-sm(ng-click='onAssign(customer)')= __('admin.users.customers.assign')
                             div(ng-switch-when="true")
-                                button.btn.btn-success(ng-click='onAssign(customer)')= __('admin.users.customers.unassign')
+                                button.btn.btn-default.btn-sm(ng-click='onAssign(customer)')= __('admin.users.customers.unassign')
             table.table(ng-table='ng')
                 thead
                     tr
@@ -65,6 +67,6 @@ h1.page-header= __('admin.users.title')
                         td
                             div(ng-switch on="isAssignedRole(role)")
                                 div(ng-switch-when="false")
-                                    button.btn.btn-success(ng-click='onAssignRole(role)')= __('admin.users.roles.assign')
+                                    button.btn.btn-default.btn-sm(ng-click='onAssignRole(role)')= __('admin.users.roles.assign')
                                 div(ng-switch-when="true")
-                                    button.btn.btn-success(ng-click='onAssignRole(role)')= __('admin.users.roles.unassign')
+                                    button.btn.btn-default.btn-sm(ng-click='onAssignRole(role)')= __('admin.users.roles.unassign')

@@ -22,5 +22,9 @@ h1.page-header= __('admin.index.navigation.ratingtypes')
                     td {{ratingType.r}}
                     td {{ratingType.name}}
                     td
-                        button.btn.btn-success(ng-click='onEdit(ratingType)')  Edit
-                        button.btn.btn-success(ng-click='onDelete(ratingType)')  Delete
+                        button.btn.btn-default.btn-sm(ng-click='onEdit(ratingType)')
+                            span.glyphicon.glyphicon-edit Edit
+                        button.btn.btn-default.btn-sm(ng-click='onDelete(ratingType)')
+                            span.glyphicon.glyphicon-remove Delete
+
+

@@ -32,6 +32,9 @@ h1.page-header= __('admin.customers.title')
                     td {{customer.code}}
                     td {{customer.address}}
                     td
-                        button.btn.btn-success(ng-click='onEdit(customer)')  Edit
-                        button.btn.btn-success(ng-click='onDepartments(customer)')  Departments
-                        button.btn.btn-success(ng-click='onDelete(customer)')  Delete
+                        button.btn.btn-default.btn-sm(ng-click='onEdit(customer)')
+                            span.glyphicon.glyphicon-edit Edit
+                        button.btn.btn-default.btn-sm(ng-click='onDepartments(customer)')
+                            span.glyphicon.glyphicon-share Departments
+                        button.btn.btn-default.btn-sm(ng-click='onDelete(customer)')
+                            span.glyphicon.glyphicon-remove Delete
