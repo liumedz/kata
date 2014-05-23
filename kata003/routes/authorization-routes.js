@@ -25,7 +25,7 @@ module.exports = function(express, clames, models, crypto){
 
         models.userModel.User.findOne({email: email, password: shaSum.digest('hex')}).populate('roles').exec(function (err, user) {
 
-            if(err !== null){
+            if(err !== null || user === null){
                 res.render('authentication/login', {error: "Incorrect email or password!"});
                 return;
             }

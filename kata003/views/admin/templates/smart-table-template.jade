@@ -10,7 +10,7 @@ div
             thead
                 tr
                     th(data-ng-repeat='column in tableColumns')
-                        dropdown-multiselect(caption='column.title', name='column.name', on-checked='onChecked', model='column.checkedItems', options='column.checkItems')
+                        smart-table-multiselect-filter(caption='column.title', name='column.name', on-checked='onChecked', model='column.checkedItems', options='column.checkItems')
             tbody
                 tr(data-ng-repeat='row in tableRows | filter:search:strict', class='{{row.visibility}}')
                     td(data-ng-repeat='cell in row.cells track by $index')

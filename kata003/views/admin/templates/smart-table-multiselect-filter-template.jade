@@ -1,0 +1,19 @@
+﻿.btn-group(data-ng-class='{open: open}')
+        button.btn.btn-small {{caption}}
+            button.btn.btn-small.dropdown-toggle(data-ng-click='open=!open;')
+                span.caret
+            ul.dropdown-menu(aria-labelledby='dropdownMenu')
+                li
+                    a(data-ng-click='selectAll()')
+                        i.icon-ok-sign
+                        | Check All
+                li
+                    a(data-ng-click='deselectAll();')
+                        i.icon-remove-sign
+                        | Uncheck All
+                li.divider
+                li(data-ng-repeat='option in options') {{option.visibility}}
+                    a(data-ng-click='setSelectedItem(option)')
+                        span(data-ng-class='isChecked(option)')
+                        | {{option.name | date:'medium'}}
+

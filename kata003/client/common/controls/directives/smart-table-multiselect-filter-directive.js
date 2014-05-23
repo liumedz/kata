@@ -1,4 +1,4 @@
-commonControls.directive('dropdownMultiselect', function(){
+commonControls.directive('smartTableMultiselectFilter', function(){
     return {
         restrict: 'E',
         scope:{
@@ -8,7 +8,7 @@ commonControls.directive('dropdownMultiselect', function(){
             name: '=',
             caption: '='
         },
-        templateUrl: "dropdown-multiselect-template.html",
+        templateUrl: "smart-table-multiselect-filter-template.html",
         controller: function($scope){
 
             $scope.selectAll = function () {
