@@ -1,0 +1,5 @@
+.input-group
+    input#fromDateTime.form-control(type='text', datepicker-popup='{{format}}', is-open='opened', ng-model='ngModel', datepicker-options='dateOptions', date-disabled='disabled(date, mode)', ng-required='true', close-text='Close')
+    span(class='input-group-btn')
+        button(class='btn btn-default', ng-click='open($event)')
+            i(class='glyphicon glyphicon-calendar')

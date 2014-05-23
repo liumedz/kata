@@ -1,0 +1,26 @@
+h1.page-header= __('admin.index.navigation.statistics')
+.row
+    .col-lg-4 
+        div(ui-chart='someData', chart-options='myChartOpts')
+    .col-lg-4
+        .row
+            .form-group
+                label(class='col-lg-4 control-label' for='fromDateTime') From:
+                .col-lg-8
+                    inline-datepicker(ng-model='dateFilter.fromDate')
+        .row
+            .form-group
+                label.col-lg-4.control-label(for='toDateTime') To:
+                .col-lg-8
+                    inline-datepicker(ng-model='dateFilter.toDate')
+        .row
+            .col-lg-9
+            .col-lg-3
+                button(class='btn', data-ng-click='load()') Load
+    .col-lg-4
+        ul.list-group
+            li.list-group-item(data-ng-repeat='detail in details')
+                span.badge {{detail.value}}
+                | {{detail.name}}
+.row
+    smart-table(table-data-source='dataSource', table-data-loaded='tableDataLoaded(tableData)')

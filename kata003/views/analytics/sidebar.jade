@@ -1,0 +1,7 @@
+.container-fluid
+    .row
+        .col-sm-3.col-md-2.sidebar
+            ul.nav.nav-sidebar
+                li(ng-repeat='menu in mainMenus', class='{{menu.active}}')
+                    a(href='#', ng-click='onClick(menu)') {{menu.title}}
+

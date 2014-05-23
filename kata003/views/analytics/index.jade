@@ -6,7 +6,7 @@ block styles
     link(rel='stylesheet', href='/vendor/jqplot/jquery.jqplot.css')
     // styles end
 block content
-    div(data-ng-app='app', ng-controller="adminController")
+    div(data-ng-app='app', ng-controller="analyticsController")
         include header
         include sidebar
         .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
@@ -39,34 +39,15 @@ block scripts
     script(src='/common/statistics/resources/statistics-resource.js')
     script(src='/common/statistics/services/statistics-service.js')
 
-    script(src='/admin/app.js')
-    script(src='/admin/controllers/admin-controller.js')
-    script(src='/admin/controllers/overview-controller.js')
-    script(src='/admin/controllers/users-controller.js')
-    script(src='/admin/resources/users-resource.js')
-    script(src='/admin/controllers/customers-controller.js')
-    script(src='/admin/resources/customers-resource.js')
-    script(src='/admin/controllers/departments-controller.js')
-    script(src='/admin/controllers/objects-controller.js')
-    script(src='/admin/controllers/ratingtypes-controller.js')
-    script(src='/admin/controllers/import-ratings-controller.js')
-    script(src='/admin/resources/ratings-resource.js')
-    script(src='/admin/resources/permissions-resource.js')
-    script(src='/admin/controllers/roles-controller.js')
-    script(src='/admin/resources/roles-resource.js')
+    script(src='/analytics/app.js')
+    script(src='/analytics/controllers/analytics-controller.js')
     // scripts end
 
 block global
     script.
         var global = {
             mainMenus:  [
-                {title: "#{__('admin.index.navigation.overview')}", url: '/admin', active: 'active'}, 
-                {title: "#{__('admin.users.title')}", url: '/admin/users'},
-                {title: "#{__('admin.roles.title')}", url: '/admin/roles'},
-                {title: "#{__('admin.customers.title')}", url: '/admin/customers'},
-                {title: "#{__('admin.index.navigation.statistics')}", url: '/admin/statistics'},
-                {title: "#{__('admin.index.navigation.import.ratings')}", url: '/admin/import/ratings'},
-                {title: "#{__('admin.index.navigation.logout')}", url: '/admin/logout'}
+                {title: "#{__('admin.index.navigation.statistics')}", url: '/analytics/statistics'}
            ],
            statisticsTableColumns: {
                    c: "#{__('admin.statistics.customer.c')}",

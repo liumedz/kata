@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularFileUpload', 'ui.chart', 'common-controls']);
+var app = angular.module('app', ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularFileUpload', 'ui.chart', 'statistics', 'common-controls']);
 
 app.config(['$routeProvider' , '$locationProvider', function ($routeProvider, $locationProvider) {
 

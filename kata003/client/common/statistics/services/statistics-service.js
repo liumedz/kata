@@ -1,6 +1,6 @@
 'use strict';
 
-app.factory('statisticsService', ['$q', 'statisticsResource', function($q, statisticsResource) {
+statistics.factory('statisticsService', ['$q', 'statisticsResource', function($q, statisticsResource) {
 
     var dataSource = {dataSourceDeferred: {}};
     var load = function(filter){
