@@ -36,7 +36,7 @@ app.factory('statisticsService', ['$q', 'statisticsResource', function($q, stati
                     o: item.object.o,
                     objectName: item.object.name,
                     r: item.rating.r,
-                    created: new Date(item.rating.created),
+                    created: new Date(item.rating.created), //Date.parse(item.rating.created), //
                     ratingName: item.rating.name
                 };
             });

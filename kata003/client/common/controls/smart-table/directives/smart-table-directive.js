@@ -65,7 +65,7 @@ commonControls.directive('smartTable', function() {
 
                 var hasCheckItem = false;
                 column.checkItems.forEach(function(checkItem) {
-                    if (checkItem.name === row[column.name]) {
+                    if (angular.equals(checkItem.name, row[column.name])) {
                         hasCheckItem = true;
                         return;
                     }
@@ -115,7 +115,7 @@ commonControls.directive('smartTable', function() {
                             }
                             var show = false;
                             column.checkedItems.forEach(function(checkedItem) {
-                                if (checkedItem && checkedItem.name === row[column.name]) {
+                                if (checkedItem && angular.equals(checkedItem.name, row[column.name])) {
                                     show = true;
                                 }
                             });
