@@ -1,40 +1,9 @@
 module.exports = function(express, authorization, permissions, models){
 
-    var isPermittedView = authorization.ensureRequest.isPermitted(permissions.webIndex);
+    var isPermittedView = authorization.ensureRequest.isPermitted(permissions.admin);
 
     var apiRouter = express.Router();
 
-    apiRouter.get('/customers', isPermittedView, function (req, res) {
-        models.customerModel.Customer.find(req.query, function (err, data, count) {
-            res.send(data);
-        });
-    });
-
-    apiRouter.get('/customers/:_id', isPermittedView, function (req, res) {
-        models.customerModel.Customer.findById(req.params._id, function (err, data, count) {
-            res.send(data);
-        });
-    });
-
-    apiRouter.post('/customers', isPermittedView, function (req, res) {
-        var data = new models.customerModel.Customer(req.body);
-        data.save(function (err, data, count) {
-                res.send(data);
-            }
-        );
-    });
-
-    apiRouter.put('/customers/:_id', isPermittedView, function (req, res) {
-        models.customerModel.Customer.findByIdAndUpdate(req.params._id, req.body, function (err, numberAffected, raw) {
-            res.send(200);
-        });
-    });
-
-    apiRouter.delete('/customers/:_id', isPermittedView, function (req, res) {
-        models.customerModel.Customer.remove({ _id: req.params._id }, function (err, data) {
-            res.send(data);
-        });
-    });
 
     apiRouter.get('/statistics', function (req, res) {
 
@@ -76,21 +45,21 @@ module.exports = function(express, authorization, permissions, models){
                             return item.c === rating.c;
                         }).forEach(function (item) {
                             newCustomer = item,
-                            item.departments.filter(function (item) {
-                                return item.d === rating.d
-                            }).forEach(function (item) {
-                                newDepartment = item;
-                                item.objects.filter(function (item) {
-                                    return item.o === rating.o;
+                                item.departments.filter(function (item) {
+                                    return item.d === rating.d
                                 }).forEach(function (item) {
-                                    newObject = item;
-                                    item.ratingTypes.filter(function (item) {
-                                        return item.r === rating.r;
-                                    }).forEach(function(item){
-                                        newRating = item;
+                                    newDepartment = item;
+                                    item.objects.filter(function (item) {
+                                        return item.o === rating.o;
+                                    }).forEach(function (item) {
+                                        newObject = item;
+                                        item.ratingTypes.filter(function (item) {
+                                            return item.r === rating.r;
+                                        }).forEach(function(item){
+                                            newRating = item;
+                                        });
                                     });
                                 });
-                            });
                         });
 
                         return {
@@ -123,29 +92,6 @@ module.exports = function(express, authorization, permissions, models){
             });
         });
 
-    });
-
-    apiRouter.get('/ratings', function (req, res) {
-        models.ratingModel.Rating.find(function (err, ratings) {
-            res.send(ratings);
-        });
-    });
-
-    apiRouter.post('/ratings', function (req, res) {
-        var rating = new models.ratingModel.Rating(req.body);
-        rating.save(function (err, data, count) {
-                res.send(data);
-            }
-        );
-    });
-
-    apiRouter.get('/r/:c/:d/:o/:r', function (req, res) {
-        var rating = new models.ratingModel.Rating(req.params);
-        rating.save(function (err, data, count) {
-            models.ratingModel.Rating.find(function (err, data, count) {
-                res.send(data);
-            });
-        });
     });
 
     return apiRouter;

@@ -47,15 +47,27 @@ module.exports = function(express, clames, models, crypto){
             });
 
             if(req.session.user.roles){
+
+                var index = req.session.user.roles.indexOf('analytics');
+                if(index > -1){
+                    res.redirect('/analytics');
+                    return;
+                }
+
                 var index = req.session.user.roles.indexOf('admin');
                 if(index > -1){
                     res.redirect('/admin');
+                    return;
                 }
-                else{
-                    res.redirect('/');
-                }
+
+                res.redirect('/');
             }
         });
+    });
+
+    authorization.get('/logout', function(req, res, next) {
+        req.session.user = null;
+        res.redirect('/login');
     });
 
     return authorization;

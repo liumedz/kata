@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('adminController', [ '$scope', '$location', function ($scope, $location) {
+app.controller('adminController', [ '$scope', '$location', '$window', function ($scope, $location, $window) {
 
     var deselectMenu = function(){
         $scope.mainMenus.forEach(function(item){
@@ -14,6 +14,11 @@ app.controller('adminController', [ '$scope', '$location', function ($scope, $lo
     $scope.onClick = function(menu){
         deselectMenu();
         menu.active = 'active';
+
+        if(menu.url === '/logout'){
+            $window.location.href = menu.url;
+        }
+
         $location.url(menu.url);
     }
 

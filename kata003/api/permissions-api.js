@@ -1,6 +1,6 @@
 module.exports = function(express, authorization, permissions){
 
-    var isPermittedView = authorization.ensureRequest.isPermitted(permissions.usersManagement);
+    var isPermittedView = authorization.ensureRequest.isPermitted(permissions.admin);
 
     var apiRouter = express.Router();
 

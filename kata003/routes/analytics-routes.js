@@ -1,6 +1,6 @@
 module.exports = function(express, authorization, clames, models){
 
-    var isPermittedView = authorization.ensureRequest.isPermitted(clames.webIndex);
+    var isPermittedView = authorization.ensureRequest.isPermitted(clames.analytics);
 
     var adminRouter = express.Router();
 
