@@ -96,6 +96,7 @@
 	"admin.import.ratings.o": "Objektas",
 	"admin.import.ratings.r": "Įvertinimas",
 	"admin.import.ratings.isImported": "Importuota",
+	"admin.import.ratings.clientInfo": "Client Info",
 	"admin.roles.title": "Rolės",
 	"admin.roles.add": "Pridėti",
 	"admin.roles.name": "Pavadinimas",

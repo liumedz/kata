@@ -7,7 +7,7 @@
         o: { type: Number, unique: false, required: true },
         r: { type: Number, unique: false, required: true },
         isImported: { type: Boolean, unique: false, required: false, default: false },
-        clientInfo: { type: String}
+        clientInfo: {type: mongoose.Schema.Types.Mixed }
     });
     
     Rating = mongoose.model('Rating', RatingSchema);

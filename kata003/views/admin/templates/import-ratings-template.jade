@@ -13,6 +13,7 @@ h1.page-header= __('admin.index.navigation.import.ratings')
                     th= __('admin.import.ratings.o')
                     th= __('admin.import.ratings.r')
                     th= __('admin.import.ratings.isImported')
+                    th= __('admin.import.ratings.clientInfo')
             tbody
                 tr(ng-repeat='rating in ratings')
                     td {{rating.created}}
@@ -21,3 +22,4 @@ h1.page-header= __('admin.index.navigation.import.ratings')
                     td {{rating.o}}
                     td {{rating.r}}
                     td {{rating.isImported}}
+                    td {{rating.clientInfo}}

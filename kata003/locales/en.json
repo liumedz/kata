@@ -95,6 +95,7 @@
 	"admin.import.ratings.o": "Organization",
 	"admin.import.ratings.r": "Ratings",
 	"admin.import.ratings.isImported": "Is Imported",
+	"admin.import.ratings.clientInfo": "Client Info",
 	"admin.users.permissions.name": "Name",
 	"admin.roles.title": "Roles",
 	"admin.roles.add": "Add",

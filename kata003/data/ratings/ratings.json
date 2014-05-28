@@ -11726,5 +11726,2189 @@
       "major": "34",
       "family": "Chrome Mobile"
     }
+  ],
+  [
+    "2014-04-26T11:08:50.451Z",
+    6,
+    12,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-26T11:09:41.621Z",
+    6,
+    12,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-26T11:09:43.715Z",
+    6,
+    12,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-26T11:09:44.416Z",
+    6,
+    12,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-26T11:09:44.799Z",
+    6,
+    12,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-27T07:38:42.498Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "PAP3400DUO",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "2",
+      "minor": "2",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-27T07:38:43.072Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "PAP3400DUO",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "2",
+      "minor": "2",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-27T12:58:55.726Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "6",
+        "minor": "1",
+        "patch": "6"
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "6",
+      "major": "6",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-04-27T13:45:35.885Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "4",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9505",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "2",
+      "minor": "4",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-27T13:45:36.409Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "4",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9505",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "30",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-04-28T06:07:18.879Z",
+    6,
+    31,
+    1,
+    4,
+    "83.181.117.223",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "HUAWEI P6-U06",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "2",
+      "minor": "2",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-28T09:08:23.139Z",
+    6,
+    82,
+    1,
+    2,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-28T09:08:36.903Z",
+    6,
+    82,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-28T09:08:39.354Z",
+    6,
+    82,
+    1,
+    4,
+    "90.142.147.33",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "GT-I9300",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-28T10:59:56.229Z",
+    1,
+    1,
+    1,
+    2,
+    "188.69.213.25",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "GT-I9300",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-04-28T11:00:22.463Z",
+    6,
+    52,
+    1,
+    4,
+    "83.189.199.99",
+    {
+      "os": {
+        "family": "Windows Phone",
+        "major": "7",
+        "minor": "5",
+        "patch": ""
+      },
+      "device": {
+        "family": "Lumia 520",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "9",
+      "family": "IE Mobile"
+    }
+  ],
+  [
+    "2014-04-28T11:02:31.313Z",
+    6,
+    52,
+    1,
+    3,
+    "90.134.121.208",
+    {
+      "os": {
+        "family": "Windows 8",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "10",
+      "family": "IE"
+    }
+  ],
+  [
+    "2014-04-28T19:51:27.999Z",
+    1,
+    1,
+    1,
+    5,
+    "83.181.102.11",
+    {
+      "os": {
+        "family": "Windows Phone",
+        "major": "8",
+        "minor": "0",
+        "patch": ""
+      },
+      "device": {
+        "family": "Lumia 520",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "10",
+      "family": "IE Mobile"
+    }
+  ],
+  [
+    "2014-04-29T10:49:23.111Z",
+    6,
+    68,
+    1,
+    3,
+    "84.15.190.153",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": "1"
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-04-29T13:07:41.635Z",
+    1,
+    1,
+    1,
+    2,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-04-29T13:08:05.868Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-04-29T14:03:06.849Z",
+    6,
+    83,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-04-29T14:03:07.575Z",
+    6,
+    83,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-03T20:43:20.458Z",
+    1,
+    1,
+    1,
+    5,
+    "84.15.183.45",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": "1"
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-04T11:22:40.038Z",
+    1,
+    1,
+    1,
+    5,
+    "77.219.138.11",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-04T11:22:42.532Z",
+    1,
+    1,
+    1,
+    5,
+    "77.219.138.11, 66.249.81.194",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "GT-I9300",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-04T11:24:21.208Z",
+    1,
+    1,
+    1,
+    5,
+    "77.219.138.11",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-05T08:34:18.463Z",
+    2,
+    1,
+    1,
+    1,
+    "86.100.253.129",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-05T14:10:21.326Z",
+    4,
+    1,
+    1,
+    5,
+    "188.69.211.82",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-05T14:10:25.715Z",
+    4,
+    1,
+    1,
+    5,
+    "188.69.211.82",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "1",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9100",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "2",
+      "minor": "1",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-05T14:10:52.334Z",
+    4,
+    1,
+    2,
+    5,
+    "188.69.211.82",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-05T14:10:53.719Z",
+    4,
+    1,
+    2,
+    5,
+    "188.69.211.82",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "1",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9100",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "2",
+      "minor": "1",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-06T08:29:46.944Z",
+    2,
+    2,
+    1,
+    1,
+    "188.69.211.177",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-06T08:30:31.172Z",
+    2,
+    2,
+    1,
+    1,
+    "188.69.211.177",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-06T14:56:35.340Z",
+    1,
+    1,
+    1,
+    2,
+    "77.219.75.28",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-06T14:56:38.393Z",
+    1,
+    1,
+    1,
+    2,
+    "77.219.75.28",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9105P",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-08T08:15:03.711Z",
+    6,
+    7,
+    1,
+    4,
+    "83.181.66.243",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-08T08:15:09.267Z",
+    6,
+    7,
+    1,
+    4,
+    "83.181.66.243",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "1",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9300",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-08T11:42:29.876Z",
+    6,
+    28,
+    1,
+    1,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-08T11:42:37.027Z",
+    6,
+    28,
+    1,
+    2,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-08T11:42:44.871Z",
+    6,
+    28,
+    1,
+    2,
+    "90.131.46.59",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9105P",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "2",
+      "minor": "2",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-09T11:31:13.289Z",
+    6,
+    28,
+    1,
+    4,
+    "84.15.181.223",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": "1"
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-09T13:27:24.112Z",
+    6,
+    20,
+    1,
+    4,
+    "90.131.63.231",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-09T19:43:59.934Z",
+    1,
+    1,
+    1,
+    2,
+    "84.15.189.238",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-09T19:44:02.822Z",
+    1,
+    1,
+    1,
+    2,
+    "84.15.189.238",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "4",
+        "patch": "2"
+      },
+      "device": {
+        "family": "SM-N9005",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-10T09:12:06.667Z",
+    6,
+    16,
+    1,
+    4,
+    "90.131.40.176",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "GT-N7100",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-10T09:12:07.172Z",
+    6,
+    16,
+    1,
+    4,
+    "90.131.40.176",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "GT-N7100",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-11T15:15:50.906Z",
+    1,
+    1,
+    1,
+    5,
+    "66.249.81.194",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Nexus One",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-11T15:16:06.225Z",
+    1,
+    1,
+    1,
+    5,
+    "188.69.214.163, 66.249.81.194",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "4",
+        "patch": "2"
+      },
+      "device": {
+        "family": "Nexus 4",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-12T10:27:23.897Z",
+    4,
+    1,
+    2,
+    5,
+    "84.15.189.137, 66.249.81.194",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9295",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-14T09:04:53.663Z",
+    6,
+    81,
+    1,
+    4,
+    "90.131.41.59",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "1",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I8190N",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-14T11:13:49.015Z",
+    1,
+    1,
+    1,
+    5,
+    "83.189.210.202",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "C6603",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-15T20:41:26.806Z",
+    9,
+    1,
+    1,
+    1,
+    "86.100.253.129",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-15T20:41:35.491Z",
+    9,
+    1,
+    1,
+    2,
+    "86.100.253.129",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-16T11:11:53.744Z",
+    9,
+    1,
+    1,
+    1,
+    "188.69.208.87",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-16T14:19:05.883Z",
+    6,
+    71,
+    1,
+    4,
+    "188.69.192.42",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "0",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-16T15:16:54.760Z",
+    1,
+    1,
+    1,
+    4,
+    "188.69.198.237",
+    {
+      "os": {
+        "family": "Windows Phone",
+        "major": "8",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "Lumia 1520",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "11",
+      "family": "IE Mobile"
+    }
+  ],
+  [
+    "2014-05-16T16:42:31.624Z",
+    1,
+    1,
+    1,
+    5,
+    "83.181.130.161",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "1",
+        "patch": "2"
+      },
+      "device": {
+        "family": "LG-P710",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-16T20:11:51.021Z",
+    1,
+    1,
+    1,
+    5,
+    "188.69.215.1",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "4",
+        "patch": "2"
+      },
+      "device": {
+        "family": "D5503",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-19T15:53:59.623Z",
+    9,
+    1,
+    1,
+    2,
+    "188.69.194.102",
+    {
+      "os": {
+        "family": "Windows Phone",
+        "major": "8",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "HTC",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "11",
+      "family": "IE Mobile"
+    }
+  ],
+  [
+    "2014-05-20T09:13:57.690Z",
+    9,
+    1,
+    1,
+    2,
+    "188.69.208.57",
+    {
+      "os": {
+        "family": "Windows Phone",
+        "major": "7",
+        "minor": "5",
+        "patch": ""
+      },
+      "device": {
+        "family": "Lumia 800",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "9",
+      "family": "IE Mobile"
+    }
+  ],
+  [
+    "2014-05-20T19:54:41.540Z",
+    9,
+    1,
+    1,
+    1,
+    "188.69.194.3",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-21T05:33:40.206Z",
+    9,
+    1,
+    1,
+    2,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-21T05:33:41.143Z",
+    9,
+    1,
+    1,
+    2,
+    "83.178.57.30",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": "7"
+      },
+      "device": {
+        "family": "ST27i",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "7",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-21T13:22:58.340Z",
+    9,
+    1,
+    1,
+    1,
+    "188.69.214.122",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-21T13:23:08.407Z",
+    9,
+    1,
+    1,
+    1,
+    "188.69.214.122, 82.145.218.177",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "5",
+      "major": "7",
+      "family": "Opera Mini"
+    }
+  ],
+  [
+    "2014-05-21T18:53:58.202Z",
+    9,
+    1,
+    1,
+    2,
+    "77.219.144.118",
+    {
+      "os": {
+        "family": "Windows Phone",
+        "major": "8",
+        "minor": "0",
+        "patch": ""
+      },
+      "device": {
+        "family": "Lumia 625",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "10",
+      "family": "IE Mobile"
+    }
+  ],
+  [
+    "2014-05-21T20:32:48.816Z",
+    1,
+    1,
+    1,
+    5,
+    "188.69.197.207",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9195",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-23T12:51:11.300Z",
+    6,
+    74,
+    1,
+    4,
+    "77.219.64.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-23T12:51:20.608Z",
+    6,
+    74,
+    1,
+    4,
+    "77.219.64.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": "6"
+      },
+      "device": {
+        "family": "GT-S5830i",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "6",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-23T20:14:57.004Z",
+    1,
+    1,
+    1,
+    5,
+    "188.69.199.8",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "4",
+        "patch": "2"
+      },
+      "device": {
+        "family": "Galaxy Nexus",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1916",
+      "minor": "0",
+      "major": "35",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-23T20:15:03.177Z",
+    1,
+    1,
+    1,
+    2,
+    "90.131.33.236",
+    {
+      "os": {
+        "family": "Linux",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1437",
+      "minor": "0",
+      "major": "21",
+      "family": "Opera"
+    }
+  ],
+  [
+    "2014-05-24T15:13:20.931Z",
+    6,
+    16,
+    1,
+    2,
+    "188.69.194.3",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-25T11:54:47.828Z",
+    1,
+    1,
+    1,
+    4,
+    "84.15.180.230",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "HTC One X",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "2",
+      "minor": "2",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-25T11:54:48.293Z",
+    1,
+    1,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-26T17:11:29.910Z",
+    2,
+    2,
+    1,
+    1,
+    "188.69.194.150",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-26T17:11:55.418Z",
+    2,
+    1,
+    1,
+    1,
+    "188.69.194.150",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
+  ],
+  [
+    "2014-05-26T20:44:08.105Z",
+    1,
+    1,
+    1,
+    4,
+    "54.234.26.153",
+    {
+      "os": {
+        "family": "Android",
+        "major": "2",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "3",
+      "major": "2",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-26T20:44:08.526Z",
+    1,
+    1,
+    1,
+    4,
+    "83.189.232.244",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-I9195",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "2",
+      "minor": "2",
+      "major": "4",
+      "family": "Android"
+    }
+  ],
+  [
+    "2014-05-27T11:23:52.582Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-27T11:24:08.485Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "3",
+        "patch": ""
+      },
+      "device": {
+        "family": "GT-I9300",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1847",
+      "minor": "0",
+      "major": "34",
+      "family": "Chrome Mobile"
+    }
+  ],
+  [
+    "2014-05-27T11:26:04.577Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "device": {
+        "family": "Other",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "0",
+      "major": "0",
+      "family": "Other"
+    }
+  ],
+  [
+    "2014-05-27T11:26:11.689Z",
+    1,
+    1,
+    1,
+    5,
+    "178.236.197.192",
+    {
+      "os": {
+        "family": "Android",
+        "major": "4",
+        "minor": "2",
+        "patch": "2"
+      },
+      "device": {
+        "family": "GT-P5210",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "1916",
+      "minor": "0",
+      "major": "35",
+      "family": "Chrome"
+    }
+  ],
+  [
+    "2014-05-27T15:50:40.411Z",
+    2,
+    2,
+    1,
+    1,
+    "188.69.194.150",
+    {
+      "os": {
+        "family": "iOS",
+        "major": "7",
+        "minor": "1",
+        "patch": ""
+      },
+      "device": {
+        "family": "iPhone",
+        "major": "",
+        "minor": "",
+        "patch": ""
+      },
+      "patch": "0",
+      "minor": "1",
+      "major": "7",
+      "family": "Mobile Safari"
+    }
   ]
 ]

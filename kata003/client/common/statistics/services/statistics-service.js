@@ -17,6 +17,7 @@ statistics.factory('statisticsService', ['$q', 'statisticsResource', function($q
                 //        {name: 'd', title: global.statisticsTableColumns.d},
                 {name: 'departmentName', title: global.statisticsTableColumns.departmentName},
                 {name: 'departmentCode', title: global.statisticsTableColumns.departmentCode},
+                {name: 'departmentAddress', title: global.statisticsTableColumns.departmentAddress},
                 //       {name: 'o', title: global.statisticsTableColumns.o},
                 {name: 'objectName', title: global.statisticsTableColumns.objectName},
                 //        {name: 'r', title: global.statisticsTableColumns.r},
@@ -33,10 +34,12 @@ statistics.factory('statisticsService', ['$q', 'statisticsResource', function($q
                     d: item.department.d,
                     departmentName: item.department.name,
                     departmentCode: item.department.code,
+                    departmentAddress: item.department.address,
                     o: item.object.o,
                     objectName: item.object.name,
                     r: item.rating.r,
-                    created: new Date(item.rating.created), //Date.parse(item.rating.created), //
+                    created: new Date(item.rating.created),
+                    clientInfo: item.rating.clientInfo,
                     ratingName: item.rating.name
                 };
             });

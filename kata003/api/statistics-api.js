@@ -81,6 +81,7 @@ module.exports = function(express, authorization, permissions, models){
                             },
                             rating: {
                                 created: rating.created,
+                                clientInfo: rating.clientInfo,
                                 r: newRating.r,
                                 name: newRating.name
                             }
