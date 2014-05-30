@@ -17,10 +17,10 @@
 	"web.index.beHeard.content": "Beirate Kunden-Service (BKS) Marktforshungstool – schnelles, einfaches und anonymes Feedback-System, das Ihre Diensleistungen bewerten lässt. Ihr Kunde wählt eine gewünschte Bewertungsoption, indem er Sie mit Hilfe eines Smartphones scannt.",
 	"web.index.anonymousAndSecure.header": "Anonym und sicher",
 	"web.index.anonymousAndSecure.content": "Die Antwortquote fällt höher wenn der Kunde anonym befragt wird. Wir schätzen Ihre Kundendaten und garantieren, dass die Sicherheit, Validität und Integrität der Daten stets gesichert sind.",
-	"web.index.multiplatformsystem.header": "Works on any device",
-	"web.index.multiplatformsystem.content": "Feedback from customers can be provided with any smartphone in the market. They just simply scan their answer option using any “QR code reader” application on any device. And feedback is taken - simple as that.",
-	"web.index.weCare.header": "We care about customer service",
-	"web.index.weCare.content": "Restaurant, coffee-shop, retailer or etc. - where customers face our feedback tool - care about customer service and want to deliver best services, wants to improve and strive for perfection.",
+	"web.index.multiplatformsystem.header": "Funktioniert auf jedem Smartphone",
+	"web.index.multiplatformsystem.content": "Das Feedback kann mit jedem üblichen Smartphone hinterlassen werden. Sie scannen einfach Ihren gewünschten Code mit \"QR Code Reader\" auf Ihrem Smartphone. Und die Rückmeldung ist aufgenommen. So einfach geht es!",
+	"web.index.weCare.header": "Diensleistungsqualität ist uns wichtig",
+	"web.index.weCare.content": "Sei es ein Restaurant, Cafe oder Händler – überall wo Kunden unser Beirate Tool vorfinden - sie kümmern sich um die Qualität der erbrachten Dienstleistungen und streben stets nach Verbesserung und Perfektion.",
 	"web.index.tryNow.header": "TRY IT",
 	"web.index.tryNow.headerPart2": ", here and now ",
 	"web.index.tryNow.content": "Take your smartphone, open any",
@@ -110,11 +110,10 @@
 	"admin.roles.unassign": "Unassign",
 	"admin.users.roles.assign": "Assign",
 	"admin.users.roles.unassign": "Unassign",
-    "admin.customers.title": "Customers",
+	"admin.customers.title": "Customers",
 	"admin.customers.c": "C",
 	"admin.customers.name": "Name",
 	"admin.customers.code": "Code",
 	"admin.customers.address": "Address",
 	"admin.customers.submit": "Save"
-	
 }
