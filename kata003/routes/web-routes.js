@@ -8,7 +8,6 @@ module.exports = function(express){
 
     web.get('/', function(req, res, next) {
         var locale = req.cookies.locale;
-        locale = locale === 'en' ? 'lt' : 'en';
         res.render('web/index', {locale: locale});
     });
 

@@ -12,8 +12,15 @@
         .navbar-collapse.collapse
             ul.nav.navbar-nav
                 ul.nav.navbar-nav
-                    li
-                        a(href='/locale/#{locale}')= locale
+                    - var isActiveEn = (locale === en ? 'active' : '')
+                    li(class=isActiveEn)
+                        a(href='/locale/en') EN
+                    - var isActiveDe = (locale === de ? 'active' : '')
+                    li(class=isActiveDe)
+                        a(href='/locale/de') DE
+                    - var isActiveLt = (locale === lt ? 'active' : '')
+                    li(class=isActiveLt)
+                        a(href='/locale/lt') LT
 #main-carousel.carousel.slide(data-ride='carousel')
     ol.carousel-indicators
         li.active(data-target='#main-carousel', data-slide-to='0')
