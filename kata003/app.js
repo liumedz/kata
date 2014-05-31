@@ -37,6 +37,7 @@ var localizationRoutes = require('./routes/localization-routes')(express);
 var webRoutes = require('./routes/web-routes')(express, authorization);
 var adminRoutes = require('./routes/admin-routes')(express, authorization, permissions, models);
 var analyticsRoutes = require('./routes/analytics-routes')(express, authorization, permissions, models);
+var rateRoutes = require('./routes/rate-routes')(express, authorization, permissions, models);
 var ratingsApi = require('./api/ratings-api')(express, authorization, permissions, models);
 var statisticsApi = require('./api/statistics-api')(express, authorization, permissions, models);
 var customersApi = require('./api/customers-api')(express, authorization, permissions, models);
@@ -89,6 +90,7 @@ app.use('/api', rolesApi);
 app.use('/api', permissionsApi);
 app.use('/admin', adminRoutes);
 app.use('/analytics', analyticsRoutes);
+app.use('/r', rateRoutes);
 
 
 /// catch 404 and forwarding to error handler

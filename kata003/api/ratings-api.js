@@ -18,14 +18,14 @@ module.exports = function(express, authorization, permissions, models){
         );
     });
 
-    apiRouter.get('/r/:c/:d/:o/:r', function (req, res) {
-        var rating = new models.ratingModel.Rating(req.params);
-        rating.save(function (err, data, count) {
-            models.ratingModel.Rating.find(function (err, data, count) {
-                res.send(data);
-            });
-        });
-    });
+//    apiRouter.get('/r/:c/:d/:o/:r', function (req, res) {
+//        var rating = new models.ratingModel.Rating(req.params);
+//        rating.save(function (err, data, count) {
+//            models.ratingModel.Rating.find(function (err, data, count) {
+//                res.send(data);
+//            });
+//        });
+//    });
 
     return apiRouter;
 };
