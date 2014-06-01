@@ -27,7 +27,7 @@ module.exports = function(express, authorization, permissions, models){
                     });
                 }
 
-                models.ratingModel.Rating.find({c: {$in: cs},  created: {$gte: fromDate, $lt: toDate}}, function (err, ratings) {
+                models.ratingModel.Rating.find({c: {$in: cs},  created: {$gte: fromDate, $lt: toDate}, $or: [{disabled: undefined}, {disabled: false}]}, function (err, ratings) {
 
                     if(err !== null){
                         res.send({error: 'Error'});

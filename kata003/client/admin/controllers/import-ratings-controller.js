@@ -42,6 +42,10 @@ app.controller('importRatingsController', ['$scope', '$location', '$upload', 'ra
         }
     };
 
+    $scope.onDisable = function(rating){
+        ratingsResource.update({_id: rating._id}, rating);
+    }
+
     load();
 
 }]);

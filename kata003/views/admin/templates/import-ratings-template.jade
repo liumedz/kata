@@ -7,19 +7,27 @@ h1.page-header= __('admin.index.navigation.import.ratings')
         table.table(ng-table='ng')
             thead
                 tr
+                    th id
                     th= __('admin.import.ratings.created')
                     th= __('admin.import.ratings.c')
                     th= __('admin.import.ratings.d')
                     th= __('admin.import.ratings.o')
                     th= __('admin.import.ratings.r')
+                    th Comment
                     th= __('admin.import.ratings.isImported')
                     th= __('admin.import.ratings.clientInfo')
+                    th Disabled
             tbody
                 tr(ng-repeat='rating in ratings')
+                    td {{rating._id}}
                     td {{rating.created}}
                     td {{rating.c}}
                     td {{rating.d}}
                     td {{rating.o}}
                     td {{rating.r}}
+                    td {{rating.comment}}
                     td {{rating.isImported}}
                     td {{rating.clientInfo}}
+                    td
+                        span
+                            input(type="checkbox", data-ng-model='rating.disabled', data-ng-change='onDisable(rating)')

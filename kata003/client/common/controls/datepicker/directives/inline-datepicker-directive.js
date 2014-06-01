@@ -1,4 +1,4 @@
-commonControls.directive('inlineDatepicker', function(){
+commonControls.directive('inlineDatepicker', [function(){
     return {
         restrict: "E",
         replace: true,
@@ -34,4 +34,4 @@ commonControls.directive('inlineDatepicker', function(){
             $scope.format = 'shortDate';
         }
     };
-});
+}]);

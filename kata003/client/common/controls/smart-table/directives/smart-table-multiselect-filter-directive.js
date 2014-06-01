@@ -1,4 +1,4 @@
-commonControls.directive('smartTableMultiselectFilter', function($filter){
+commonControls.directive('smartTableMultiselectFilter', ['$filter', function($filter){
     return {
         restrict: 'E',
         scope:{
@@ -48,5 +48,5 @@ commonControls.directive('smartTableMultiselectFilter', function($filter){
 
         }
     }
-});
+}]);
 

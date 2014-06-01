@@ -1,4 +1,4 @@
-commonControls.directive('smartTable', function() {
+commonControls.directive('smartTable', [ function() {
     return {
         restrict: 'E',
         replace: true,
@@ -193,4 +193,4 @@ commonControls.directive('smartTable', function() {
             };
         }
     };
-});
+}]);
