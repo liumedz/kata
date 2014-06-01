@@ -21,8 +21,9 @@ statistics.factory('statisticsService', ['$q', 'statisticsResource', function($q
                 //       {name: 'o', title: global.statisticsTableColumns.o},
                 {name: 'objectName', title: global.statisticsTableColumns.objectName},
                 //        {name: 'r', title: global.statisticsTableColumns.r},
-                { name: 'created', title: global.statisticsTableColumns.created },
-                {name: 'ratingName', title: global.statisticsTableColumns.ratingTypeName}
+                {name: 'created', title: global.statisticsTableColumns.created },
+                {name: 'ratingName', title: global.statisticsTableColumns.ratingTypeName},
+                {name: 'comment', title: global.statisticsTableColumns.comment}
             ];
 
             var statistics = data.map(function(item){
@@ -39,8 +40,10 @@ statistics.factory('statisticsService', ['$q', 'statisticsResource', function($q
                     objectName: item.object.name,
                     r: item.rating.r,
                     created: new Date(item.rating.created),
+                    ratingName: item.rating.name,
                     clientInfo: item.rating.clientInfo,
-                    ratingName: item.rating.name
+                    comment: item.rating.comment
+
                 };
             });
 
