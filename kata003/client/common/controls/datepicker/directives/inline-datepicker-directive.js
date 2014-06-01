@@ -1,3 +1,5 @@
+'use strict';
+
 commonControls.directive('inlineDatepicker', [function(){
     return {
         restrict: "E",

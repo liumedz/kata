@@ -1,3 +1,5 @@
+'use strict';
+
 commonControls.filter('smartTableDateFilter', ['$filter', function ($filter) {
     return function (input) {
         if(angular.isDate(input)){

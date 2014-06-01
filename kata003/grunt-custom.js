@@ -153,7 +153,11 @@ module.exports = function(){
 
     var getUglifyTask = function(jadeTemplatesDir, targetDir){
 
-        var uglifyTask = {uglify: {}}
+        var uglifyTask = {uglify: {
+            options: {
+                mangle: false
+            }
+        }}
 
         var files = getScripts(jadeTemplatesDir);
         files.forEach(function(item){

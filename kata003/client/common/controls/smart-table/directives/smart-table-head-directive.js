@@ -1,3 +1,5 @@
+'use strict';
+
 commonControls.directive('smartTableHead', [ function(){
     return {
         restrict: "E",

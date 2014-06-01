@@ -1,3 +1,5 @@
+'use strict';
+
 commonControls.directive('smartTableMultiselectFilter', ['$filter', function($filter){
     return {
         restrict: 'E',
