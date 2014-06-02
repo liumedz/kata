@@ -116,5 +116,10 @@
 	"admin.customers.name": "Name",
 	"admin.customers.code": "Code",
 	"admin.customers.address": "Address",
-	"admin.customers.submit": "Save"
+	"admin.customers.submit": "Save",
+	"rate.r.message": "AČIŪ UŽ JŪSŲ ĮVERTINIMĄ",
+	"rate.r.yourChoice": "TAVO PASIRINKIMAS",
+	"rate.r.comment": "KOMENTARAS",
+	"rate.r.commentButton": "Komentuoti",
+	"rate.r.DownloadMobileApp": "Parsisiųskite Beirate programėlę"
 }
