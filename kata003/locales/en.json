@@ -118,10 +118,11 @@
 	"admin.customers.code": "Code",
 	"admin.customers.address": "Address",
 	"admin.customers.submit": "Save",
-	"rate.r.message": "AČIŪ UŽ JŪSŲ ĮVERTINIMĄ",
-	"rate.r.yourChoice": "TAVO PASIRINKIMAS",
-	"rate.r.comment": "KOMENTARAS",
-	"rate.r.commentButton": "Komentuoti",
-	"rate.r.DownloadMobileApp": "Parsisiųskite Beirate programėlę"
+	"rate.r.message": "THANK YOU FOR YOUR FEEDBACK",	
+	"rate.r.ratedMessage": "THANK YOU, WE HAVE YOUR FEEDBACK ALREADY",
+	"rate.r.yourChoice": "Your choice",
+	"rate.r.comment": "Comment",
+	"rate.r.commentButton": "Comment",
+	"rate.r.DownloadMobileApp": "Download mobile app"
 	
 }

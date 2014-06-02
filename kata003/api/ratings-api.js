@@ -52,12 +52,13 @@ module.exports = function(express, authorization, permissions, models){
                     rating.ip = ip;
                     rating.clientInfo = clientInfo;
                     rating.save(function (err, data, count) {
-                            res.send({error: 0, message: 'Thanks for your rating!', _commentId: data._id});
+
+                            res.send({error: 0, message: res.__('rate.r.message'), _commentId: data._id});
                         }
                     );
                 }
                 else{
-                    res.send({error: 2, message: 'You have been rated today!'});
+                    res.send({error: 2, message: res.__('rate.r.ratedMessage')});
                 }
             });
         }

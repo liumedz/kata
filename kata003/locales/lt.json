@@ -115,6 +115,7 @@
 	"admin.customers.address": "Adresas",
 	"admin.customers.submit": "Išsaugoti",
 	"rate.r.message": "AČIŪ UŽ JŪSŲ ĮVERTINIMĄ",
+	"rate.r.ratedMessage": "AČIŪ, ŠIANDIEN JAU ĮVERTINOTE",
 	"rate.r.yourChoice": "TAVO PASIRINKIMAS",
 	"rate.r.comment": "KOMENTARAS",
 	"rate.r.commentButton": "Komentuoti",

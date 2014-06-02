@@ -3,6 +3,10 @@ module.exports = function(express, authorization, clames, crypto, models){
     var adminRouter = express.Router();
 
     adminRouter.use(function(req, res, next) {
+        var locale = req.originalUrl.replace(req.url, '');
+        locale = locale.replace('/r', '');
+        locale = locale.replace('/', '');
+        res.cookie('locale', locale);
         next();
     });
 

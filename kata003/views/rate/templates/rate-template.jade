@@ -1,21 +1,22 @@
 .panel.panel-default
     .panel-heading
-        h2 {{info}}
+        h3= __('rate.r.message')
     .panel-body
         ul(class='stars-list list-inline')
-            span Your chose:
+            h4= __('rate.r.yourChoice')
             li(class='glyphicon glyphicon-star' ng-repeat='i in rating track by $index')
 .panel.panel-default(data-ng-show='showComment')
     .panel-heading
-        h2 Comment
+        h4= __('rate.r.comment')
     .panel-body
-        form(role='form')
+        form(role='form', ng-submit="onComment(comment)")
             .form-group
-                textarea(class='form-control', rows='5', ng-disabled='disabled', data-ng-model='comment')
-            button(class='btn btn-success btn-lg', data-ng-disabled='disabled', data-ng-click='onComment(comment)') Comment
+                textarea(class='form-control', rows='5', maxlength="150", ng-disabled='disabled', data-ng-model='comment')
+            - var commentButtonText = __("rate.r.commentButton")
+            input(class='btn btn-success btn-lg', data-ng-disabled='disabled', type='submit', value=commentButtonText)
 .panel.panel-default
     .panel-heading
-        h2 Download mobile app:
+        h4= __('rate.r.DownloadMobileApp')
     .panel-body
         a(href="https://play.google.com/store/apps/details?id=com.beirate.app")
             img(class='img-responsive' src='images/en/android-app-button.png')

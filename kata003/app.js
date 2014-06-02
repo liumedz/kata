@@ -93,6 +93,7 @@ app.use('/api', permissionsApi);
 app.use('/admin', adminRoutes);
 app.use('/analytics', analyticsRoutes);
 app.use('/r', rateRoutes);
+app.use('/:locale/r', rateRoutes);
 
 
 /// catch 404 and forwarding to error handler
