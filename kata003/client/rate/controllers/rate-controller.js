@@ -9,7 +9,7 @@ app.controller('rateController', [ '$scope', '$location', '$cookies' , 'rateReso
 
     var rate = function(){
         rateResource.save({clientInfo: clientInfo}, function(data){
-            $scope.info = data.message;
+            $scope.message = data.message;
             if(data.error === 0){
                 $scope.disabled = false;
                 _commentId = data._commentId;

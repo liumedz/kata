@@ -6,7 +6,9 @@ module.exports = function(express, authorization, clames, crypto, models){
         var locale = req.originalUrl.replace(req.url, '');
         locale = locale.replace('/r', '');
         locale = locale.replace('/', '');
-        res.cookie('locale', locale);
+        if(locale !== 'r'){
+            res.cookie('locale', locale);
+        }
         next();
     });
 
