@@ -127,5 +127,7 @@
 	"rate.r.yourChoice": "TAVO PASIRINKIMAS",
 	"rate.r.comment": "KOMENTARAS",
 	"rate.r.commentButton": "Komentuoti",
-	"rate.r.DownloadMobileApp": "Parsisiųskite Beirate programėlę"
+	"rate.r.DownloadMobileApp": "Parsisiųskite Beirate programėlę",
+	"authentication.login.email": "Elektroninio pašto adresas",
+	"authentication.login.password": "Slaptažodis"
 }

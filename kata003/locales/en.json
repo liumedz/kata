@@ -130,5 +130,7 @@
 	"rate.r.ratedMessage": "THANK YOU, WE HAVE YOUR FEEDBACK ALREADY",
 	"rate.r.yourChoice": "Your choice",
 	"rate.r.comment": "Comment",
-	"rate.r.commentButton": "Comment"
+	"rate.r.commentButton": "Comment",
+	"authentication.login.email": "Email",
+	"authentication.login.password": "Password"
 }

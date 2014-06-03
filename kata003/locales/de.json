@@ -130,5 +130,7 @@
 	"rate.r.yourChoice": "Your choice",
 	"rate.r.comment": "Comment",
 	"rate.r.commentButton": "Comment",
-	"rate.r.DownloadMobileApp": "Download mobile app"
+	"rate.r.DownloadMobileApp": "Download mobile app",
+	"authentication.login.email": "Email",
+	"authentication.login.password": "Password"
 }

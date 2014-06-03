@@ -15,15 +15,11 @@ block content
         .col-lg-2
             form(role='form', method='post')
                 .form-group
-                    label(for='email') Email address
+                    label(for='email')= __('authentication.login.email')
                     input#email.form-control(type='email', name='email', placeholder='Enter email')
                     .form-group
-                        label(for='password') Password
+                        label(for='password')= __('authentication.login.password')
                         input#password.form-control(type='password', name='password', placeholder='Password')
-                    .checkbox
-                        label
-                            input(type='checkbox')
-                            | Check me out
                     input.btn.btn-default(type='submit', text='Submit')
         .col-lg-5
 
