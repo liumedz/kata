@@ -20,7 +20,7 @@ statistics.factory('statisticsService', ['$q', 'statisticsResource', function($q
                 {name: 'departmentAddress', title: global.statisticsTableColumns.departmentAddress},
                 //       {name: 'o', title: global.statisticsTableColumns.o},
                 {name: 'objectName', title: global.statisticsTableColumns.objectName},
-                //        {name: 'r', title: global.statisticsTableColumns.r},
+                {name: 'r', title: global.statisticsTableColumns.r},
                 {name: 'created', title: global.statisticsTableColumns.created },
                 {name: 'ratingName', title: global.statisticsTableColumns.ratingTypeName},
                 {name: 'comment', title: global.statisticsTableColumns.comment}

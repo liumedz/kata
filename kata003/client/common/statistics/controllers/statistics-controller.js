@@ -26,22 +26,22 @@ statistics.controller('statisticsController', ['$scope', '$location', '$q', '$ti
 
     var calculatePieCharData = function (rows, column) {
         $scope.someData = [[]];
+
         rows.forEach(function (row) {
             if (row.visibility !== 'collapse') {
                 var value = row[column];
                 var index = -1;
-
                 $scope.someData[0].forEach(function (item, itemIndex) {
                     if (value === item[0]) {
                         index = itemIndex;
                     }
                 });
-
                 if (index === -1) {
                     $scope.someData[0].push([value, 1]);
                 } else {
                     $scope.someData[0][index][1]++;
                 }
+                $scope.average += value;
             }
         });
         if ($scope.someData[0].length === 0) {
@@ -49,22 +49,22 @@ statistics.controller('statisticsController', ['$scope', '$location', '$q', '$ti
         }
     };
 
+    var calculateDataCharData = function (rows, column) {
+        $scope.total = rows.length;
+        $scope.average = 0;
+
+        rows.forEach(function (row) {
+            if (row.visibility !== 'collapse') {
+                $scope.average += row[column];
+            }
+        });
+
+        $scope.average = ($scope.average / $scope.total).toFixed(2);
+
+    }
+
     var JSON2CSV = function(objArray) {
         var array = typeof objArray != 'object' ? JSON.parse(objArray) : objArray;
-
-//        "c": 6,
-//            "customerName": "AB Lietuvos paštas",
-//            "customerCode": "1212 15587",
-//            "customerAddress": "J. Jasinskio g. 16, 03500 Vilnius",
-//            "d": 70,
-//            "departmentName": "Paypost",
-//            "departmentCode": "22407",
-//            "departmentAddress": "Architektų g. 19 (prie PC \"Rimi\"), Vilnius\r",
-//            "o": 1,
-//            "objectName": "Plakatas",
-//            "r": 1,
-//            "created": "2014-04-03T22:17:49.604Z",
-//            "clientInfo": {
         var str = '';
         var line = '';
         for (var i = 0; i < array.length; i++) {
@@ -84,9 +84,7 @@ statistics.controller('statisticsController', ['$scope', '$location', '$q', '$ti
 
             str += line + '\r\n';
         }
-
         return str;
-
     }
 
     $scope.myChartOpts = pieChartOptions;
@@ -100,6 +98,7 @@ statistics.controller('statisticsController', ['$scope', '$location', '$q', '$ti
         });
         rows = tableData.rows;
         calculatePieCharData(tableData.rows, 'ratingName');
+        calculateDataCharData(tableData.rows, 'r');
     };
 
     $scope.load = function(){

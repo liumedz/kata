@@ -1,24 +1,32 @@
 h1.page-header= __('admin.index.navigation.statistics')
 .row
-    .col-lg-4 
+    .col-lg-4
+        div
+            ul.list-group
+                li.list-group-item
+                    span.badge {{total}}
+                    div= __('common.statistics.from')
+                li.list-group-item
+                    span.badge {{average}}
+                    div= __('common.statistics.average')
         div(ui-chart='someData', chart-options='myChartOpts')
     .col-lg-4
         .row
             .form-group
-                label(class='col-lg-4 control-label' for='fromDateTime') From:
+                label(class='col-lg-4 control-label' for='fromDateTime')= __('common.statistics.from')
                 .col-lg-8
                     inline-datepicker(ng-model='dateFilter.fromDate')
         .row
             .form-group
-                label.col-lg-4.control-label(for='toDateTime') To:
+                label.col-lg-4.control-label(for='toDateTime')= __('common.statistics.to')
                 .col-lg-8
                     inline-datepicker(ng-model='dateFilter.toDate')
         .row
+            legend
             .col-lg-3
+                button(class='btn', data-ng-click='load()')= __('common.statistics.load')
             .col-lg-3
-                button(class='btn', data-ng-click='load()') Load
-            .col-lg-3
-                button(class='btn', data-ng-click='export()') Export
+                button(class='btn', data-ng-click='export()')= __('common.statistics.export')
     .col-lg-4
         ul.list-group
             li.list-group-item(data-ng-repeat='detail in details')
