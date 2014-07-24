@@ -1,0 +1,18 @@
+{
+  "name": "kata004",
+  "version": "0.0.1",
+  "homepage": "https://github.com/liumedz/kata",
+  "authors": [
+    "liumedz <liutauras.medziunas@gmail.com>"
+  ],
+  "description": "kata4",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

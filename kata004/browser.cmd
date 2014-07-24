@@ -1,0 +1,1 @@
+browser-sync start --files "assets/css/index.css, index.html" --proxy localhost:8000
